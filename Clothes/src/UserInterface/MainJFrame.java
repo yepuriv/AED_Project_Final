@@ -79,7 +79,7 @@ public class MainJFrame extends javax.swing.JFrame {
         upperContainer.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 104, 20));
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        jLabel1.setText("Username");
+        jLabel1.setText("UserId");
         upperContainer.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -133,7 +133,7 @@ public class MainJFrame extends javax.swing.JFrame {
         
         if(uname.equalsIgnoreCase("") || password1.equals("") || (uname.equalsIgnoreCase("") && password1.equals(""))){
             
-            JOptionPane.showMessageDialog(null, "Please Fill Proper Details", "Error",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please Enter Proper Id", "Warning",JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -182,7 +182,7 @@ public class MainJFrame extends javax.swing.JFrame {
         }
 
         if(userAccount==null){
-            JOptionPane.showMessageDialog(null, "Invalid credentials");
+            JOptionPane.showMessageDialog(null, "Wrong UserId or Password");
             return;
         }
         else{
