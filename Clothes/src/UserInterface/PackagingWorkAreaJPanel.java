@@ -58,15 +58,15 @@ public class PackagingWorkAreaJPanel extends javax.swing.JPanel {
         tblProducts = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         showProductBtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        packagingdash = new javax.swing.JLabel();
         refreshJButton = new javax.swing.JButton();
-        btnSentToTransport = new javax.swing.JButton();
+        btnSentforTransport = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tblProducts1 = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
-        showProductBtn1 = new javax.swing.JButton();
+        tblProducts2 = new javax.swing.JTable();
+        products = new javax.swing.JLabel();
+        display2ProductBtn1 = new javax.swing.JButton();
 
         tblProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -101,8 +101,8 @@ public class PackagingWorkAreaJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setToolTipText("");
 
-        jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel1.setText("Packaging Dashboard");
+        packagingdash.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
+        packagingdash.setText("Packaging Dashboard");
 
         refreshJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         refreshJButton.setText("Refresh");
@@ -112,11 +112,11 @@ public class PackagingWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnSentToTransport.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        btnSentToTransport.setText("Send for Transport");
-        btnSentToTransport.addActionListener(new java.awt.event.ActionListener() {
+        btnSentforTransport.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        btnSentforTransport.setText("Send for Transport");
+        btnSentforTransport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSentToTransportActionPerformed(evt);
+                btnSentforTransportActionPerformed(evt);
             }
         });
 
@@ -145,7 +145,7 @@ public class PackagingWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        tblProducts1.setModel(new javax.swing.table.DefaultTableModel(
+        tblProducts2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -161,16 +161,16 @@ public class PackagingWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(tblProducts1);
+        jScrollPane3.setViewportView(tblProducts2);
 
-        jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
-        jLabel3.setText("Products");
+        products.setFont(new java.awt.Font("Academy Engraved LET", 1, 18)); // NOI18N
+        products.setText("Products");
 
-        showProductBtn1.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        showProductBtn1.setText("Display Products");
-        showProductBtn1.addActionListener(new java.awt.event.ActionListener() {
+        display2ProductBtn1.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        display2ProductBtn1.setText("Display Products");
+        display2ProductBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showProductBtn1ActionPerformed(evt);
+                display2ProductBtn1ActionPerformed(evt);
             }
         });
 
@@ -183,14 +183,14 @@ public class PackagingWorkAreaJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1037, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                        .addComponent(products)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(showProductBtn1))
+                        .addComponent(display2ProductBtn1))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnSentToTransport)
+                        .addComponent(btnSentforTransport)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(packagingdash, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(15, 15, 15))
@@ -205,14 +205,14 @@ public class PackagingWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
+                    .addComponent(packagingdash)
                     .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 262, Short.MAX_VALUE)
-                .addComponent(btnSentToTransport, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 265, Short.MAX_VALUE)
+                .addComponent(btnSentforTransport, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(showProductBtn1)
-                    .addComponent(jLabel3))
+                    .addComponent(display2ProductBtn1)
+                    .addComponent(products))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
@@ -229,7 +229,7 @@ public class PackagingWorkAreaJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "Requests Updated!");
     }//GEN-LAST:event_refreshJButtonActionPerformed
 
-    private void btnSentToTransportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSentToTransportActionPerformed
+    private void btnSentforTransportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSentforTransportActionPerformed
 
         int selectedRow = workRequestJTable.getSelectedRow();
 
@@ -267,7 +267,7 @@ public class PackagingWorkAreaJPanel extends javax.swing.JPanel {
         }
         populateTable();
         JOptionPane.showMessageDialog(null, "Request Successfully Sent for Transport !");
-    }//GEN-LAST:event_btnSentToTransportActionPerformed
+    }//GEN-LAST:event_btnSentforTransportActionPerformed
 
     private void showProductBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showProductBtnActionPerformed
 
@@ -294,14 +294,14 @@ public class PackagingWorkAreaJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_showProductBtnActionPerformed
 
-    private void showProductBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showProductBtn1ActionPerformed
+    private void display2ProductBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_display2ProductBtn1ActionPerformed
 
         int selectedRow = workRequestJTable.getSelectedRow();
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select a request");
         }
 
-        DefaultTableModel model = (DefaultTableModel) tblProducts1.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblProducts2.getModel();
         model.setRowCount(0);model.setRowCount(0);
 
         WorkRequest request = (WorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
@@ -317,7 +317,7 @@ public class PackagingWorkAreaJPanel extends javax.swing.JPanel {
                 //((DefaultTableModel) tblProducts.getModel()).addRow(row);
             }
         }
-    }//GEN-LAST:event_showProductBtn1ActionPerformed
+    }//GEN-LAST:event_display2ProductBtn1ActionPerformed
 
     
     public void populateTable() {
@@ -340,18 +340,18 @@ public class PackagingWorkAreaJPanel extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSentToTransport;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnSentforTransport;
+    private javax.swing.JButton display2ProductBtn1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel packagingdash;
+    private javax.swing.JLabel products;
     private javax.swing.JButton refreshJButton;
     private javax.swing.JButton showProductBtn;
-    private javax.swing.JButton showProductBtn1;
     private javax.swing.JTable tblProducts;
-    private javax.swing.JTable tblProducts1;
+    private javax.swing.JTable tblProducts2;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
 }

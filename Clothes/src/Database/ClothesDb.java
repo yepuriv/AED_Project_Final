@@ -17,14 +17,14 @@ import java.nio.file.Paths;
  *
  * @author Varun
  */
-public class DB4OUtil {
+public class ClothesDb {
     
     private static final String FILENAME = Paths.get("Databank.db4o").toAbsolutePath().toString();// path to the data store
-    private static DB4OUtil dB4OUtil;
+    private static ClothesDb dB4OUtil;
     
-    public synchronized static DB4OUtil getInstance(){
+    public synchronized static ClothesDb getInstance(){
         if (dB4OUtil == null){
-            dB4OUtil = new DB4OUtil();
+            dB4OUtil = new ClothesDb();
         }
         return dB4OUtil;
     }
