@@ -56,7 +56,7 @@ public class QualityCheckWorkAreaJPanel extends javax.swing.JPanel {
    
     public void populateTable() {
         
-        DefaultTableModel model = (DefaultTableModel)workRequestJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel)workRequestdJTable.getModel();
         
         model.setRowCount(0);
       
@@ -85,19 +85,19 @@ public class QualityCheckWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        workRequestJTable = new javax.swing.JTable();
-        assignJButton = new javax.swing.JButton();
-        processJButton = new javax.swing.JButton();
+        workRequestdJTable = new javax.swing.JTable();
+        assignworkreqJButton = new javax.swing.JButton();
+        processworkreqJButton = new javax.swing.JButton();
         refreshJButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblProducts = new javax.swing.JTable();
+        tblProductstype = new javax.swing.JTable();
         showProductBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        QualityCheckDashboard = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
+        workRequestdJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -120,21 +120,21 @@ public class QualityCheckWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(workRequestJTable);
+        jScrollPane1.setViewportView(workRequestdJTable);
 
-        assignJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        assignJButton.setText("Assign Work Request");
-        assignJButton.addActionListener(new java.awt.event.ActionListener() {
+        assignworkreqJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        assignworkreqJButton.setText("Assign Work Request");
+        assignworkreqJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignJButtonActionPerformed(evt);
+                assignworkreqJButtonActionPerformed(evt);
             }
         });
 
-        processJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        processJButton.setText("Process Work Request");
-        processJButton.addActionListener(new java.awt.event.ActionListener() {
+        processworkreqJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        processworkreqJButton.setText("Process Work Request");
+        processworkreqJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                processJButtonActionPerformed(evt);
+                processworkreqJButtonActionPerformed(evt);
             }
         });
 
@@ -146,7 +146,7 @@ public class QualityCheckWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        tblProducts.setModel(new javax.swing.table.DefaultTableModel(
+        tblProductstype.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -162,7 +162,7 @@ public class QualityCheckWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tblProducts);
+        jScrollPane2.setViewportView(tblProductstype);
 
         showProductBtn.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         showProductBtn.setText("Display Products");
@@ -176,9 +176,9 @@ public class QualityCheckWorkAreaJPanel extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Products");
 
-        jLabel1.setBackground(new java.awt.Color(255, 51, 102));
-        jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel1.setText("Quality Check Dashboard");
+        QualityCheckDashboard.setBackground(new java.awt.Color(255, 51, 102));
+        QualityCheckDashboard.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
+        QualityCheckDashboard.setText("Quality Check Dashboard");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -188,13 +188,13 @@ public class QualityCheckWorkAreaJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(assignJButton)
+                        .addComponent(assignworkreqJButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(processJButton)
+                        .addComponent(processworkreqJButton)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 985, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(QualityCheckDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(refreshJButton))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -210,13 +210,13 @@ public class QualityCheckWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(refreshJButton)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(QualityCheckDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(assignworkreqJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(processworkreqJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(showProductBtn)
@@ -227,16 +227,16 @@ public class QualityCheckWorkAreaJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
+    private void assignworkreqJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignworkreqJButtonActionPerformed
 
-        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = workRequestdJTable.getSelectedRow();
 
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select the required request!", "Error", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
-        WorkRequest request = (WorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
+        WorkRequest request = (WorkRequest)workRequestdJTable.getValueAt(selectedRow, 0);
         
         if(request.getStatus().equalsIgnoreCase("Sent to Quality Check"))
         {
@@ -248,17 +248,17 @@ public class QualityCheckWorkAreaJPanel extends javax.swing.JPanel {
         populateTable();
         }
         
-    }//GEN-LAST:event_assignJButtonActionPerformed
+    }//GEN-LAST:event_assignworkreqJButtonActionPerformed
 
-    private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
+    private void processworkreqJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processworkreqJButtonActionPerformed
 
-        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = workRequestdJTable.getSelectedRow();
 
          if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select the required request!", "Error", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        FoodRequirementRequest request = (FoodRequirementRequest)workRequestJTable.getValueAt(selectedRow, 0);
+        FoodRequirementRequest request = (FoodRequirementRequest)workRequestdJTable.getValueAt(selectedRow, 0);
 
         if (request.getStatus().equalsIgnoreCase("Sent to Quality")) {
             JOptionPane.showMessageDialog(null, "Please assign the request", "Error", JOptionPane.WARNING_MESSAGE);
@@ -278,7 +278,7 @@ public class QualityCheckWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Invalid Request", "Error", JOptionPane.WARNING_MESSAGE);
             return;
         }
-    }//GEN-LAST:event_processJButtonActionPerformed
+    }//GEN-LAST:event_processworkreqJButtonActionPerformed
 
     private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
         populateTable();
@@ -287,15 +287,15 @@ public class QualityCheckWorkAreaJPanel extends javax.swing.JPanel {
 
     private void showProductBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showProductBtnActionPerformed
 
-        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = workRequestdJTable.getSelectedRow();
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select a request");
         }
 
-        DefaultTableModel model = (DefaultTableModel) tblProducts.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblProductstype.getModel();
         model.setRowCount(0);model.setRowCount(0);
 
-        WorkRequest request = (WorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
+        WorkRequest request = (WorkRequest)workRequestdJTable.getValueAt(selectedRow, 0);
 
         ArrayList<Products> productList = ((FoodRequirementRequest) request).getProductList();
         if (productList!=null){
@@ -312,16 +312,16 @@ public class QualityCheckWorkAreaJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton assignJButton;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel QualityCheckDashboard;
+    private javax.swing.JButton assignworkreqJButton;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton processJButton;
+    private javax.swing.JButton processworkreqJButton;
     private javax.swing.JButton refreshJButton;
     private javax.swing.JButton showProductBtn;
-    private javax.swing.JTable tblProducts;
-    private javax.swing.JTable workRequestJTable;
+    private javax.swing.JTable tblProductstype;
+    private javax.swing.JTable workRequestdJTable;
     // End of variables declaration//GEN-END:variables
 
     

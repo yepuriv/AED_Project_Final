@@ -58,7 +58,7 @@ public class TransportWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        TransportDash = new javax.swing.JLabel();
         refreshJButton = new javax.swing.JButton();
         btnDelivered = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -70,9 +70,9 @@ public class TransportWorkAreaJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 0, 102));
 
-        jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Transport Dashboard");
+        TransportDash.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
+        TransportDash.setForeground(new java.awt.Color(255, 255, 255));
+        TransportDash.setText("Transport Dashboard");
 
         refreshJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         refreshJButton.setText("Refresh");
@@ -133,7 +133,7 @@ public class TransportWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tblProducts);
 
-        jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Academy Engraved LET", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Products");
 
@@ -153,7 +153,7 @@ public class TransportWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TransportDash, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -170,11 +170,11 @@ public class TransportWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TransportDash, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(btnDelivered, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -264,8 +264,8 @@ public class TransportWorkAreaJPanel extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel TransportDash;
     private javax.swing.JButton btnDelivered;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

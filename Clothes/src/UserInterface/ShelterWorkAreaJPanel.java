@@ -107,7 +107,7 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblProducts = new javax.swing.JTable();
         showProductBtn = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        products = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 0, 102));
 
@@ -127,7 +127,7 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        enterpriseLabel.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        enterpriseLabel.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
         enterpriseLabel.setText("Enterprise :");
 
         valueLabel.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
@@ -185,8 +185,8 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
-        jLabel2.setText("Products");
+        products.setFont(new java.awt.Font("Academy Engraved LET", 1, 18)); // NOI18N
+        products.setText("Products");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -197,7 +197,7 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(jLabel2)
+                            .addComponent(products)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(showProductBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1102, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -228,7 +228,7 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(showProductBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(products))
                 .addGap(21, 21, 21)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
@@ -278,9 +278,9 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel products;
     private javax.swing.JButton refreshTestJButton;
     private javax.swing.JButton requestTestJButton;
     private javax.swing.JTable shelterWorkRequestTable;
