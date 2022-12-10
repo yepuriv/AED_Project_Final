@@ -53,7 +53,7 @@ public class NGOWorkAreaJPanel extends javax.swing.JPanel {
     public void populateTable() {
         System.out.println("###########");
         System.out.println("###########" + ngoOrganization.getWorkQueue().getWorkRequestList());
-        DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) workRequestofNGOJTable.getModel();
         
         model.setRowCount(0);
 
@@ -78,21 +78,21 @@ public class NGOWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        workRequestJTable = new javax.swing.JTable();
-        assignJButton = new javax.swing.JButton();
-        processJButton = new javax.swing.JButton();
+        workRequestofNGOJTable = new javax.swing.JTable();
+        assignworkreqJButton = new javax.swing.JButton();
+        processworkreqJButton = new javax.swing.JButton();
         refreshJButton = new javax.swing.JButton();
-        btnSendtoDistributor = new javax.swing.JButton();
-        showProductBtn = new javax.swing.JButton();
+        btnSendtoDistributorassign = new javax.swing.JButton();
+        DisplayProductBtn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblProducts = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        tblAvailProducts = new javax.swing.JTable();
+        ngodash = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
 
-        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
+        workRequestofNGOJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -115,21 +115,21 @@ public class NGOWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(workRequestJTable);
+        jScrollPane1.setViewportView(workRequestofNGOJTable);
 
-        assignJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        assignJButton.setText("Assign Work Request");
-        assignJButton.addActionListener(new java.awt.event.ActionListener() {
+        assignworkreqJButton.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
+        assignworkreqJButton.setText("Assign Work Request");
+        assignworkreqJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignJButtonActionPerformed(evt);
+                assignworkreqJButtonActionPerformed(evt);
             }
         });
 
-        processJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        processJButton.setText("Process Work Request");
-        processJButton.addActionListener(new java.awt.event.ActionListener() {
+        processworkreqJButton.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
+        processworkreqJButton.setText("Process Work Request");
+        processworkreqJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                processJButtonActionPerformed(evt);
+                processworkreqJButtonActionPerformed(evt);
             }
         });
 
@@ -141,23 +141,23 @@ public class NGOWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnSendtoDistributor.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        btnSendtoDistributor.setText("Send to Distributor");
-        btnSendtoDistributor.addActionListener(new java.awt.event.ActionListener() {
+        btnSendtoDistributorassign.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
+        btnSendtoDistributorassign.setText("Send to Distributor");
+        btnSendtoDistributorassign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSendtoDistributorActionPerformed(evt);
+                btnSendtoDistributorassignActionPerformed(evt);
             }
         });
 
-        showProductBtn.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        showProductBtn.setText("Display Product");
-        showProductBtn.addActionListener(new java.awt.event.ActionListener() {
+        DisplayProductBtn.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        DisplayProductBtn.setText("Display Product");
+        DisplayProductBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showProductBtnActionPerformed(evt);
+                DisplayProductBtnActionPerformed(evt);
             }
         });
 
-        tblProducts.setModel(new javax.swing.table.DefaultTableModel(
+        tblAvailProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -173,12 +173,12 @@ public class NGOWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tblProducts);
+        jScrollPane2.setViewportView(tblAvailProducts);
 
-        jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel1.setText("NGO Dashboard");
+        ngodash.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
+        ngodash.setText("NGO Dashboard");
 
-        jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Academy Engraved LET", 1, 18)); // NOI18N
         jLabel2.setText("Products");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -189,21 +189,21 @@ public class NGOWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(assignJButton)
+                        .addComponent(assignworkreqJButton)
                         .addGap(18, 18, 18)
-                        .addComponent(processJButton)
+                        .addComponent(processworkreqJButton)
                         .addGap(18, 18, 18)
-                        .addComponent(btnSendtoDistributor))
+                        .addComponent(btnSendtoDistributorassign))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ngodash, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(736, 736, 736)
-                                .addComponent(showProductBtn))
+                                .addComponent(DisplayProductBtn))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 975, Short.MAX_VALUE)
                                 .addComponent(jScrollPane2)))))
@@ -214,35 +214,35 @@ public class NGOWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(ngodash)
                     .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSendtoDistributor, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                    .addComponent(assignworkreqJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(processworkreqJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSendtoDistributorassign, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(showProductBtn))
+                    .addComponent(DisplayProductBtn))
                 .addGap(24, 24, 24)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
+    private void assignworkreqJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignworkreqJButtonActionPerformed
 
-        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = workRequestofNGOJTable.getSelectedRow();
 
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a request!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        WorkRequest request = (WorkRequest) workRequestofNGOJTable.getValueAt(selectedRow, 0);
 
         if (request.getStatus().equalsIgnoreCase("Sent")) {
             request.setReceiver(userAccount);
@@ -253,18 +253,18 @@ public class NGOWorkAreaJPanel extends javax.swing.JPanel {
 
         }
 
-    }//GEN-LAST:event_assignJButtonActionPerformed
+    }//GEN-LAST:event_assignworkreqJButtonActionPerformed
 
-    private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
+    private void processworkreqJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processworkreqJButtonActionPerformed
 
-        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = workRequestofNGOJTable.getSelectedRow();
 
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a request!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        FoodRequirementRequest request = (FoodRequirementRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        FoodRequirementRequest request = (FoodRequirementRequest) workRequestofNGOJTable.getValueAt(selectedRow, 0);
 
         if (request.getStatus().equalsIgnoreCase("Sent")) {
             JOptionPane.showMessageDialog(null, "Please assign the request", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -284,23 +284,23 @@ public class NGOWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
 
-    }//GEN-LAST:event_processJButtonActionPerformed
+    }//GEN-LAST:event_processworkreqJButtonActionPerformed
 
     private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
         populateTable();
         JOptionPane.showMessageDialog(null, "Requests Updated!");
     }//GEN-LAST:event_refreshJButtonActionPerformed
 
-    private void btnSendtoDistributorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendtoDistributorActionPerformed
+    private void btnSendtoDistributorassignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendtoDistributorassignActionPerformed
 
-        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = workRequestofNGOJTable.getSelectedRow();
 
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a request");
             return;
         }
 
-        FoodRequirementRequest distrequest = (FoodRequirementRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        FoodRequirementRequest distrequest = (FoodRequirementRequest) workRequestofNGOJTable.getValueAt(selectedRow, 0);
 
         if (distrequest.getStatus().equalsIgnoreCase("Rejected")) {
             JOptionPane.showMessageDialog(null, "Request has been rejected!", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -340,21 +340,21 @@ public class NGOWorkAreaJPanel extends javax.swing.JPanel {
         populateTable();
         
         JOptionPane.showMessageDialog(null, "Request Sent to Distributor Successfully!");
-    }//GEN-LAST:event_btnSendtoDistributorActionPerformed
+    }//GEN-LAST:event_btnSendtoDistributorassignActionPerformed
 
-    private void showProductBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showProductBtnActionPerformed
+    private void DisplayProductBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplayProductBtnActionPerformed
 
-        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = workRequestofNGOJTable.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a request!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        DefaultTableModel model = (DefaultTableModel) tblProducts.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblAvailProducts.getModel();
         model.setRowCount(0);
         model.setRowCount(0);
 
-        WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        WorkRequest request = (WorkRequest) workRequestofNGOJTable.getValueAt(selectedRow, 0);
 
         ArrayList<Products> productList = ((FoodRequirementRequest) request).getProductList();
         if (productList != null) {
@@ -368,20 +368,20 @@ public class NGOWorkAreaJPanel extends javax.swing.JPanel {
             }
         }
 
-    }//GEN-LAST:event_showProductBtnActionPerformed
+    }//GEN-LAST:event_DisplayProductBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton assignJButton;
-    private javax.swing.JButton btnSendtoDistributor;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton DisplayProductBtn;
+    private javax.swing.JButton assignworkreqJButton;
+    private javax.swing.JButton btnSendtoDistributorassign;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton processJButton;
+    private javax.swing.JLabel ngodash;
+    private javax.swing.JButton processworkreqJButton;
     private javax.swing.JButton refreshJButton;
-    private javax.swing.JButton showProductBtn;
-    private javax.swing.JTable tblProducts;
-    private javax.swing.JTable workRequestJTable;
+    private javax.swing.JTable tblAvailProducts;
+    private javax.swing.JTable workRequestofNGOJTable;
     // End of variables declaration//GEN-END:variables
 }
