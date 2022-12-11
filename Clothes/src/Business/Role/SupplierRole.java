@@ -4,10 +4,23 @@
  */
 package Business.Role;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.Organization.SupplierOrganization;
+import Business.UserAccount.UserAccount;
+import UserInterface.SupplierWorkAreaJPanel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author varunkumar
  */
-public class SupplierRole {
+public class SupplierRole extends Role {
+    
+        @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        return new SupplierWorkAreaJPanel(userProcessContainer, account, (SupplierOrganization)organization, enterprise,business);
+    }
     
 }
