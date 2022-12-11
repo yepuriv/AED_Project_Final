@@ -4,10 +4,26 @@
  */
 package Business.Organization;
 
+import Business.Role.Role;
+import Business.Role.ShelterRole;
+import java.util.ArrayList;
+
 /**
  *
  * @author varunkumar
  */
-public class ShelterOrganization {
+public class ShelterOrganization extends Organization{
+    
+     public ShelterOrganization() {
+        super(Organization.Type.ShelterClothesOrganization.getValue());
+    }
+    
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new ShelterRole());
+        return roles;
+    }
     
 }
+
