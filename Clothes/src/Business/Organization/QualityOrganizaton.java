@@ -4,10 +4,25 @@
  */
 package Business.Organization;
 
+import Business.Role.QualityCheckRole;
+import Business.Role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author varunkumar
  */
-public class QualityOrganizaton {
+public class QualityOrganization extends Organization{
+   
+     public QualityOrganization() {
+        super(Organization.Type.QualityCheckClothesOrganization.getValue());
+    }
+    
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new QualityCheckRole());
+        return roles;
+    }
     
 }
