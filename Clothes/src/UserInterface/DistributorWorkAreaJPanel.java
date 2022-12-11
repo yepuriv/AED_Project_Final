@@ -15,7 +15,7 @@ import Business.Organization.Organization;
 import Business.Organization.PackagingOrganization;
 import Business.Organization.QualityOrganization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.FoodRequirementRequest;
+import Business.WorkQueue.ClothesRequirementRequest;
 import Business.WorkQueue.Inventory;
 import Business.WorkQueue.InventoryDirectory;
 import Business.WorkQueue.Products;
@@ -81,65 +81,66 @@ public class DistributorWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        assignworkreqJButton = new javax.swing.JButton();
-        processworkreqJButton = new javax.swing.JButton();
-        refreshpageJButton = new javax.swing.JButton();
-        btnSendforQC = new javax.swing.JButton();
-        distributordash = new javax.swing.JLabel();
-        btnSendforpackaging = new javax.swing.JButton();
+        assignJButton = new javax.swing.JButton();
+        processJButton = new javax.swing.JButton();
+        refreshJButton = new javax.swing.JButton();
+        btnSendtoQualityCheck = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        btnSendtoPackaging = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tableforProducts = new javax.swing.JTable();
+        tblProducts = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
-        DisplayProductBtn = new javax.swing.JButton();
-        ProductsjLabel = new javax.swing.JLabel();
+        showProductBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setForeground(new java.awt.Color(255, 255, 255));
 
-        assignworkreqJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        assignworkreqJButton.setText("Assign Work Request");
-        assignworkreqJButton.addActionListener(new java.awt.event.ActionListener() {
+        assignJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        assignJButton.setText("Assign Work Request");
+        assignJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignworkreqJButtonActionPerformed(evt);
+                assignJButtonActionPerformed(evt);
             }
         });
 
-        processworkreqJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        processworkreqJButton.setText("Process Work Request");
-        processworkreqJButton.addActionListener(new java.awt.event.ActionListener() {
+        processJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        processJButton.setText("Process Work Request");
+        processJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                processworkreqJButtonActionPerformed(evt);
+                processJButtonActionPerformed(evt);
             }
         });
 
-        refreshpageJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        refreshpageJButton.setText("Refresh");
-        refreshpageJButton.addActionListener(new java.awt.event.ActionListener() {
+        refreshJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        refreshJButton.setText("Refresh");
+        refreshJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshpageJButtonActionPerformed(evt);
+                refreshJButtonActionPerformed(evt);
             }
         });
 
-        btnSendforQC.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        btnSendforQC.setText("Send for Quality Check");
-        btnSendforQC.addActionListener(new java.awt.event.ActionListener() {
+        btnSendtoQualityCheck.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        btnSendtoQualityCheck.setText("Send for Quality Check");
+        btnSendtoQualityCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSendforQCActionPerformed(evt);
+                btnSendtoQualityCheckActionPerformed(evt);
             }
         });
 
-        distributordash.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
-        distributordash.setText("Distributor Dashboard");
+        jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        jLabel1.setText("Distributor Dashboard");
 
-        btnSendforpackaging.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        btnSendforpackaging.setText("Send for Packaging");
-        btnSendforpackaging.addActionListener(new java.awt.event.ActionListener() {
+        btnSendtoPackaging.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        btnSendtoPackaging.setText("Send for Packaging");
+        btnSendtoPackaging.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSendforpackagingActionPerformed(evt);
+                btnSendtoPackagingActionPerformed(evt);
             }
         });
 
-        tableforProducts.setModel(new javax.swing.table.DefaultTableModel(
+        tblProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -155,7 +156,7 @@ public class DistributorWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(tableforProducts);
+        jScrollPane3.setViewportView(tblProducts);
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -182,16 +183,16 @@ public class DistributorWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        DisplayProductBtn.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        DisplayProductBtn.setText("Display Products");
-        DisplayProductBtn.addActionListener(new java.awt.event.ActionListener() {
+        showProductBtn.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        showProductBtn.setText("Display Products");
+        showProductBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DisplayProductBtnActionPerformed(evt);
+                showProductBtnActionPerformed(evt);
             }
         });
 
-        ProductsjLabel.setFont(new java.awt.Font("Academy Engraved LET", 1, 18)); // NOI18N
-        ProductsjLabel.setText("Products");
+        jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        jLabel2.setText("Products");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -201,14 +202,10 @@ public class DistributorWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(ProductsjLabel)
+                        .addComponent(jLabel2)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(distributordash, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(refreshpageJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane3)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1174, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -216,16 +213,20 @@ public class DistributorWorkAreaJPanel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(DisplayProductBtn)
+                                    .addComponent(showProductBtn)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(assignworkreqJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(processworkreqJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(btnSendforQC)
+                                        .addComponent(btnSendtoQualityCheck)
                                         .addGap(18, 18, 18)
-                                        .addComponent(btnSendforpackaging, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(280, 280, 280)))))
+                                        .addComponent(btnSendtoPackaging, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(280, 280, 280))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(10, 10, 10))))
         );
         layout.setVerticalGroup(
@@ -233,27 +234,27 @@ public class DistributorWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(refreshpageJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(distributordash))
+                    .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(assignworkreqJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(processworkreqJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSendforQC, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSendforpackaging, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                    .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSendtoQualityCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSendtoPackaging, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ProductsjLabel)
-                    .addComponent(DisplayProductBtn))
+                    .addComponent(jLabel2)
+                    .addComponent(showProductBtn))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void assignworkreqJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignworkreqJButtonActionPerformed
+    private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
 
         int selectedRow = workRequestJTable.getSelectedRow();
 
@@ -272,9 +273,9 @@ public class DistributorWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Request cannot be assigned by " + userAccount, "Warning", JOptionPane.WARNING_MESSAGE);
         }
 
-    }//GEN-LAST:event_assignworkreqJButtonActionPerformed
+    }//GEN-LAST:event_assignJButtonActionPerformed
 
-    private void processworkreqJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processworkreqJButtonActionPerformed
+    private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
 
         int selectedRow = workRequestJTable.getSelectedRow();
 
@@ -288,7 +289,7 @@ public class DistributorWorkAreaJPanel extends javax.swing.JPanel {
         ArrayList<Products> reqProduct = new ArrayList<>();
         HashMap<String, Integer> reqProductMap = new HashMap<>();
 
-        FoodRequirementRequest request = (FoodRequirementRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        ClothesRequirementRequest request = (ClothesRequirementRequest) workRequestJTable.getValueAt(selectedRow, 0);
 
         if (request.getStatus().equalsIgnoreCase("Sent to Distributor")) {
             JOptionPane.showMessageDialog(null, "Please assign the request", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -326,14 +327,14 @@ public class DistributorWorkAreaJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         populateTable();
-    }//GEN-LAST:event_processworkreqJButtonActionPerformed
+    }//GEN-LAST:event_processJButtonActionPerformed
 
-    private void refreshpageJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshpageJButtonActionPerformed
+    private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
         populateTable();
         JOptionPane.showMessageDialog(null, "Requests Updated!");
-    }//GEN-LAST:event_refreshpageJButtonActionPerformed
+    }//GEN-LAST:event_refreshJButtonActionPerformed
 
-    private void btnSendforQCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendforQCActionPerformed
+    private void btnSendtoQualityCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendtoQualityCheckActionPerformed
 
         int selectedRow = workRequestJTable.getSelectedRow();
 
@@ -342,7 +343,7 @@ public class DistributorWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
 
-        FoodRequirementRequest quaRequest = (FoodRequirementRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        ClothesRequirementRequest quaRequest = (ClothesRequirementRequest) workRequestJTable.getValueAt(selectedRow, 0);
         
         if (quaRequest.getStatus().equalsIgnoreCase("Sent to Supplier")) {
             JOptionPane.showMessageDialog(null, "Request pending with Supplier!", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -388,9 +389,9 @@ public class DistributorWorkAreaJPanel extends javax.swing.JPanel {
         populateTable();
 
         JOptionPane.showMessageDialog(null, "Request Successfully Sent for Quality Check!");
-    }//GEN-LAST:event_btnSendforQCActionPerformed
+    }//GEN-LAST:event_btnSendtoQualityCheckActionPerformed
 
-    private void btnSendforpackagingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendforpackagingActionPerformed
+    private void btnSendtoPackagingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendtoPackagingActionPerformed
         // TODO add your handling code here:
          int selectedRow = workRequestJTable.getSelectedRow();
 
@@ -399,7 +400,7 @@ public class DistributorWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
 
-        FoodRequirementRequest quaRequest = (FoodRequirementRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        ClothesRequirementRequest quaRequest = (ClothesRequirementRequest) workRequestJTable.getValueAt(selectedRow, 0);
         
         if (quaRequest.getStatus().equalsIgnoreCase("Sent to Supplier")) {
             JOptionPane.showMessageDialog(null, "Request pending with Supplier!", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -443,21 +444,21 @@ public class DistributorWorkAreaJPanel extends javax.swing.JPanel {
         populateTable();
 
         JOptionPane.showMessageDialog(null, "Request Successfully Sent for Packaging!");
-    }//GEN-LAST:event_btnSendforpackagingActionPerformed
+    }//GEN-LAST:event_btnSendtoPackagingActionPerformed
 
-    private void DisplayProductBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplayProductBtnActionPerformed
+    private void showProductBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showProductBtnActionPerformed
 
         int selectedRow = workRequestJTable.getSelectedRow();
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select a request");
         }
 
-        DefaultTableModel model = (DefaultTableModel) tableforProducts.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblProducts.getModel();
         model.setRowCount(0);model.setRowCount(0);
 
         WorkRequest request = (WorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
 
-        ArrayList<Products> productList = ((FoodRequirementRequest) request).getProductList();
+        ArrayList<Products> productList = ((ClothesRequirementRequest) request).getProductList();
         if (productList!=null){
             for (Products p : productList) {
                 Object row[] = new Object[3];
@@ -468,21 +469,21 @@ public class DistributorWorkAreaJPanel extends javax.swing.JPanel {
                 //((DefaultTableModel) tblProducts.getModel()).addRow(row);
             }
         }
-    }//GEN-LAST:event_DisplayProductBtnActionPerformed
+    }//GEN-LAST:event_showProductBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton DisplayProductBtn;
-    private javax.swing.JLabel ProductsjLabel;
-    private javax.swing.JButton assignworkreqJButton;
-    private javax.swing.JButton btnSendforQC;
-    private javax.swing.JButton btnSendforpackaging;
-    private javax.swing.JLabel distributordash;
+    private javax.swing.JButton assignJButton;
+    private javax.swing.JButton btnSendtoPackaging;
+    private javax.swing.JButton btnSendtoQualityCheck;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JButton processworkreqJButton;
-    private javax.swing.JButton refreshpageJButton;
-    private javax.swing.JTable tableforProducts;
+    private javax.swing.JButton processJButton;
+    private javax.swing.JButton refreshJButton;
+    private javax.swing.JButton showProductBtn;
+    private javax.swing.JTable tblProducts;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
 }

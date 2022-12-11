@@ -13,7 +13,7 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.SupplierOrganization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.FoodRequirementRequest;
+import Business.WorkQueue.ClothesRequirementRequest;
 import Business.WorkQueue.Inventory;
 import Business.WorkQueue.InventoryDirectory;
 import Business.WorkQueue.Products;
@@ -29,7 +29,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author akshitvarma
+ * @author varunkumar
  */
 public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -37,35 +37,35 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
      * Creates new form ProcessDWorkAreaJPanel
      */
     private JPanel userProcessContainer;
-    private FoodRequirementRequest request;
+    private ClothesRequirementRequest request;
     private ArrayList<Inventory> inventoryList;
     private ArrayList<Products> productList;
     UserAccount userAccount;
     boolean flag1 = false;
     EcoSystem ecosystem;
-    Boolean flagFood;
+    Boolean flagClothes;
     Enterprise enterprise;
     HashMap<String, Integer> requiredProdMap = new HashMap<>();
 
-    public ProcessDWorkAreaJPanel(JPanel userProcessContainer,UserAccount userAccount, FoodRequirementRequest requestFood, Boolean flag, HashMap<String, Integer> requiredProdMap, Enterprise enterprise, EcoSystem ecosystem) {
+    public ProcessDWorkAreaJPanel(JPanel userProcessContainer,UserAccount userAccount, ClothesRequirementRequest requestClothes, Boolean flag, HashMap<String, Integer> requiredProdMap, Enterprise enterprise, EcoSystem ecosystem) {
         initComponents();
         // InventoryDirectory.setInventoryList();
         this.userProcessContainer = userProcessContainer;
-        this.request = requestFood;
+        this.request = requestClothes;
         productList = request.getProductList();
-        this.flagFood = flag;
+        this.flagClothes = flag;
         this.enterprise = enterprise;
         this.ecosystem = ecosystem;
         this.userAccount=userAccount;
         this.requiredProdMap = requiredProdMap;
 
-        if (flagFood == true) {
-            approveNGoJButton.setEnabled(true);
-            btnrequestsupplier.setEnabled(false);
+        if (flagClothes == true) {
+            submitJButton.setEnabled(true);
+            btnSupplierClothes.setEnabled(false);
 
         } else {
-            approveNGoJButton.setEnabled(false);
-            btnrequestsupplier.setEnabled(true);
+            submitJButton.setEnabled(false);
+            btnSupplierClothes.setEnabled(true);
 
         }
         populateTable();
@@ -86,19 +86,19 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         resultJTextField = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
-        approveNGoJButton = new javax.swing.JButton();
-        processrequest = new javax.swing.JLabel();
+        submitJButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblProductstype = new javax.swing.JTable();
+        tblProducts = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblInventorydash = new javax.swing.JTable();
-        inventorydashboard = new javax.swing.JLabel();
+        tblInventory = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
         lblInventoryCount = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jComboBoxProductType = new javax.swing.JComboBox<>();
         btnProductType = new javax.swing.JButton();
         btnInventoryCount = new javax.swing.JButton();
-        btnrequestsupplier = new javax.swing.JButton();
+        btnSupplierClothes = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -113,18 +113,19 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        approveNGoJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        approveNGoJButton.setText("Approve NGO Request");
-        approveNGoJButton.addActionListener(new java.awt.event.ActionListener() {
+        submitJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        submitJButton.setText("Approve NGO Request");
+        submitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                approveNGoJButtonActionPerformed(evt);
+                submitJButtonActionPerformed(evt);
             }
         });
 
-        processrequest.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
-        processrequest.setText("Process Request");
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        jLabel2.setText("Process Request");
 
-        tblProductstype.setModel(new javax.swing.table.DefaultTableModel(
+        tblProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -140,9 +141,9 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tblProductstype);
+        jScrollPane2.setViewportView(tblProducts);
 
-        tblInventorydash.setModel(new javax.swing.table.DefaultTableModel(
+        tblInventory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -150,10 +151,10 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
                 "Product ID", "Product Type", "Product Name", "Availablility ", "Units"
             }
         ));
-        jScrollPane1.setViewportView(tblInventorydash);
+        jScrollPane1.setViewportView(tblInventory);
 
-        inventorydashboard.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
-        inventorydashboard.setText("Inventory Dashboard");
+        jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        jLabel3.setText("Inventory Dashboard");
 
         lblInventoryCount.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblInventoryCount.setForeground(new java.awt.Color(255, 255, 255));
@@ -181,11 +182,11 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnrequestsupplier.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        btnrequestsupplier.setText("Request Supplier");
-        btnrequestsupplier.addActionListener(new java.awt.event.ActionListener() {
+        btnSupplierClothes.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        btnSupplierClothes.setText("Request Supplier");
+        btnSupplierClothes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnrequestsupplierActionPerformed(evt);
+                btnSupplierClothesActionPerformed(evt);
             }
         });
 
@@ -197,8 +198,8 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(inventorydashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 303, Short.MAX_VALUE)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jComboBoxProductType, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,19 +212,19 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(processrequest)
+                                .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1)
                             .addComponent(jScrollPane2)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnrequestsupplier)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 314, Short.MAX_VALUE)
+                                .addComponent(btnSupplierClothes)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
                                 .addComponent(resultJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(63, 63, 63)
-                                .addComponent(approveNGoJButton)))
+                                .addComponent(submitJButton)))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -231,7 +232,7 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(processrequest)
+                    .addComponent(jLabel2)
                     .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -242,19 +243,19 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(btnProductType, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnInventoryCount, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblInventoryCount, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inventorydashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnrequestsupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSupplierClothes, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(approveNGoJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(submitJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(resultJTextField)
                             .addComponent(jLabel1))))
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -269,7 +270,7 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
-    private void approveNGoJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveNGoJButtonActionPerformed
+    private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
 
         resultJTextField.setText("Approved");
         request.setRequestResult(resultJTextField.getText());
@@ -295,7 +296,7 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
        // InventoryDirectory.setInventoryList(inventoryList);
          JOptionPane.showMessageDialog(null, "Request Approved Successfully!");
         populateInventory();
-    }//GEN-LAST:event_approveNGoJButtonActionPerformed
+    }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void btnProductTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductTypeActionPerformed
 
@@ -311,7 +312,7 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Empty List");
         }
 
-        DefaultTableModel dtm = (DefaultTableModel) tblInventorydash.getModel();
+        DefaultTableModel dtm = (DefaultTableModel) tblInventory.getModel();
         dtm.setRowCount(0);
 
         for (Inventory p : inv) {
@@ -341,7 +342,7 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnInventoryCountActionPerformed
 
-    private void btnrequestsupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrequestsupplierActionPerformed
+    private void btnSupplierClothesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupplierClothesActionPerformed
         // TODO add your handling code here:
         ArrayList<Products> productListSupp = new ArrayList<>();
         for (String str : requiredProdMap.keySet()) {
@@ -378,15 +379,15 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "Request Sent to Supplier!");
         
       
-    }//GEN-LAST:event_btnrequestsupplierActionPerformed
+    }//GEN-LAST:event_btnSupplierClothesActionPerformed
 
     public void populateTable() {
 
-        DefaultTableModel model = (DefaultTableModel) tblProductstype.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblProducts.getModel();
 
         model.setRowCount(0);
 
-        productList = ((FoodRequirementRequest) request).getProductList();
+        productList = ((ClothesRequirementRequest) request).getProductList();
         if (productList != null) {
             for (Products p : productList) {
                 Object row[] = new Object[3];
@@ -401,7 +402,7 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
     private void populateInventory() {
 
         inventoryList = InventoryDirectory.getInventoryList();
-        DefaultTableModel model1 = (DefaultTableModel) tblInventorydash.getModel();
+        DefaultTableModel model1 = (DefaultTableModel) tblInventory.getModel();
         model1.setRowCount(0);
         for (Inventory p : inventoryList) {
             Object row[] = new Object[5];
@@ -427,22 +428,22 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton approveNGoJButton;
     private javax.swing.JButton backJButton;
     private javax.swing.JButton btnInventoryCount;
     private javax.swing.JButton btnProductType;
-    private javax.swing.JButton btnrequestsupplier;
-    private javax.swing.JLabel inventorydashboard;
+    private javax.swing.JButton btnSupplierClothes;
     private javax.swing.JComboBox<String> jComboBoxProductType;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblInventoryCount;
-    private javax.swing.JLabel processrequest;
     private javax.swing.JTextField resultJTextField;
-    private javax.swing.JTable tblInventorydash;
-    private javax.swing.JTable tblProductstype;
+    private javax.swing.JButton submitJButton;
+    private javax.swing.JTable tblInventory;
+    private javax.swing.JTable tblProducts;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -12,7 +12,7 @@ import Business.Organization.Organization;
 import Business.Organization.GroceryOrganization;
 import Business.Organization.QualityOrganization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.FoodRequirementRequest;
+import Business.WorkQueue.ClothesRequirementRequest;
 import Business.WorkQueue.Inventory;
 import Business.WorkQueue.InventoryDirectory;
 import Business.WorkQueue.WorkRequest;
@@ -24,7 +24,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author akshitvarma
+ * @author varunkumar
  */
 public class ClothesGrocerWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -35,7 +35,7 @@ public class ClothesGrocerWorkAreaJPanel extends javax.swing.JPanel {
     private EcoSystem business;
     private UserAccount userAccount;
     private Enterprise enterprise;
-    private FoodRequirementRequest request;
+    private ClothesRequirementRequest request;
     private GroceryOrganization groceryOrganization;
     
     public ClothesGrocerWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, GroceryOrganization groceryOrganization, Enterprise enterprise, EcoSystem business) {
@@ -57,39 +57,39 @@ public class ClothesGrocerWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ClothesDashjLabel = new javax.swing.JLabel();
-        refreshpageJButton = new javax.swing.JButton();
-        btnSentToSup = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        refreshJButton = new javax.swing.JButton();
+        btnSentToSupplier = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        workRequesttocheckJTable = new javax.swing.JTable();
+        workRequestJTable = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tableProducts = new javax.swing.JTable();
-        displayProductBtn = new javax.swing.JButton();
-        ProductsenterpriseLabel2 = new javax.swing.JLabel();
+        tblProducts = new javax.swing.JTable();
+        showProductBtn = new javax.swing.JButton();
+        enterpriseLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setToolTipText("");
 
-        ClothesDashjLabel.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
-        ClothesDashjLabel.setText("Clothes Dashboard");
+        jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        jLabel1.setText("ClotherGrocer Dashboard");
 
-        refreshpageJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        refreshpageJButton.setText("Refresh");
-        refreshpageJButton.addActionListener(new java.awt.event.ActionListener() {
+        refreshJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        refreshJButton.setText("Refresh");
+        refreshJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshpageJButtonActionPerformed(evt);
+                refreshJButtonActionPerformed(evt);
             }
         });
 
-        btnSentToSup.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        btnSentToSup.setText("Request Fulfilled");
-        btnSentToSup.addActionListener(new java.awt.event.ActionListener() {
+        btnSentToSupplier.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        btnSentToSupplier.setText("Request Fulfilled");
+        btnSentToSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSentToSupActionPerformed(evt);
+                btnSentToSupplierActionPerformed(evt);
             }
         });
 
-        workRequesttocheckJTable.setModel(new javax.swing.table.DefaultTableModel(
+        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -112,9 +112,9 @@ public class ClothesGrocerWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(workRequesttocheckJTable);
+        jScrollPane1.setViewportView(workRequestJTable);
 
-        tableProducts.setModel(new javax.swing.table.DefaultTableModel(
+        tblProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -130,18 +130,18 @@ public class ClothesGrocerWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tableProducts);
+        jScrollPane2.setViewportView(tblProducts);
 
-        displayProductBtn.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        displayProductBtn.setText("Display Product");
-        displayProductBtn.addActionListener(new java.awt.event.ActionListener() {
+        showProductBtn.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        showProductBtn.setText("Display Product");
+        showProductBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                displayProductBtnActionPerformed(evt);
+                showProductBtnActionPerformed(evt);
             }
         });
 
-        ProductsenterpriseLabel2.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
-        ProductsenterpriseLabel2.setText("Products");
+        enterpriseLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        enterpriseLabel2.setText("Products");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -151,20 +151,20 @@ public class ClothesGrocerWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnSentToSup)
+                        .addComponent(btnSentToSupplier)
                         .addContainerGap(881, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(ClothesDashjLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(refreshpageJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(ProductsenterpriseLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(enterpriseLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(displayProductBtn)))
+                                .addComponent(showProductBtn)))
                         .addGap(15, 15, 15))))
         );
         layout.setVerticalGroup(
@@ -172,34 +172,34 @@ public class ClothesGrocerWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ClothesDashjLabel)
-                    .addComponent(refreshpageJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1)
+                    .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22)
-                .addComponent(btnSentToSup, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSentToSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(displayProductBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ProductsenterpriseLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(showProductBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(enterpriseLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void refreshpageJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshpageJButtonActionPerformed
+    private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
         populateTable();
         JOptionPane.showMessageDialog(null, "Requests Updated!");
-    }//GEN-LAST:event_refreshpageJButtonActionPerformed
+    }//GEN-LAST:event_refreshJButtonActionPerformed
 
-    private void btnSentToSupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSentToSupActionPerformed
+    private void btnSentToSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSentToSupplierActionPerformed
 
-        int selectedRow = workRequesttocheckJTable.getSelectedRow();
+        int selectedRow = workRequestJTable.getSelectedRow();
         if (selectedRow < 0) {
             return;
         }
-        FoodRequirementRequest request = (FoodRequirementRequest) workRequesttocheckJTable.getValueAt(selectedRow, 0);
+        ClothesRequirementRequest request = (ClothesRequirementRequest) workRequestJTable.getValueAt(selectedRow, 0);
 
         request.setStatus("Sent to Quality");
         if (request.getReceiver() == userAccount) {
@@ -223,23 +223,23 @@ public class ClothesGrocerWorkAreaJPanel extends javax.swing.JPanel {
                 }
             }
             JOptionPane.showMessageDialog(null, "Request successfully fulfilled!!");
-    }//GEN-LAST:event_btnSentToSupActionPerformed
+    }//GEN-LAST:event_btnSentToSupplierActionPerformed
 
-    private void displayProductBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayProductBtnActionPerformed
+    private void showProductBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showProductBtnActionPerformed
 
-        int selectedRow = workRequesttocheckJTable.getSelectedRow();
+        int selectedRow = workRequestJTable.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a request!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        DefaultTableModel model = (DefaultTableModel) tableProducts.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblProducts.getModel();
         model.setRowCount(0);
         model.setRowCount(0);
 
-        WorkRequest Foodrequest = (WorkRequest) workRequesttocheckJTable.getValueAt(selectedRow, 0);
+        WorkRequest Clothesrequest = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
 
-        ArrayList<Products> productList = ((FoodRequirementRequest) Foodrequest).getProductList();
+        ArrayList<Products> productList = ((ClothesRequirementRequest) Clothesrequest).getProductList();
         if (productList != null) {
             for (Products p : productList) {
                 Object row[] = new Object[3];
@@ -250,12 +250,12 @@ public class ClothesGrocerWorkAreaJPanel extends javax.swing.JPanel {
 
             }
         }
-    }//GEN-LAST:event_displayProductBtnActionPerformed
+    }//GEN-LAST:event_showProductBtnActionPerformed
 
     
     public void populateTable() {
         
-        DefaultTableModel model = (DefaultTableModel)workRequesttocheckJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel)workRequestJTable.getModel();
         
         model.setRowCount(0);
       
@@ -273,14 +273,14 @@ public class ClothesGrocerWorkAreaJPanel extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ClothesDashjLabel;
-    private javax.swing.JLabel ProductsenterpriseLabel2;
-    private javax.swing.JButton btnSentToSup;
-    private javax.swing.JButton displayProductBtn;
+    private javax.swing.JButton btnSentToSupplier;
+    private javax.swing.JLabel enterpriseLabel2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton refreshpageJButton;
-    private javax.swing.JTable tableProducts;
-    private javax.swing.JTable workRequesttocheckJTable;
+    private javax.swing.JButton refreshJButton;
+    private javax.swing.JButton showProductBtn;
+    private javax.swing.JTable tblProducts;
+    private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
 }
