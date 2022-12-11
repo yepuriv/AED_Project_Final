@@ -5,12 +5,12 @@
  */
 package UserInterface;
 
-import UserInterface.RequestFoodJPanel;
+import UserInterface.RequestClothesJPanel;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.ShelterOrganization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.FoodRequirementRequest;
+import Business.WorkQueue.ClothesRequirementRequest;
 import Business.WorkQueue.Products;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author varunkumar
+ * @author akshitvarma
  */
 public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -59,7 +59,7 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
             row[0] = request;
             row[1] = request.getReceiver();
             row[2] = request.getStatus();
-            String result = ((FoodRequirementRequest) request).getRequestResult();
+            String result = ((ClothesRequirementRequest) request).getRequestResult();
             row[3] = result == null ? "Waiting" : result;
          
                 model.addRow(row);
@@ -76,7 +76,7 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);model.setRowCount(0);
         for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList())
         {
-        ArrayList<Products> productList = ((FoodRequirementRequest) request).getProductList();
+        ArrayList<Products> productList = ((ClothesRequirementRequest) request).getProductList();
             if (productList!=null){
                for (Products p : productList) {
                    Object row[] = new Object[3];
@@ -107,7 +107,7 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblProducts = new javax.swing.JTable();
         showProductBtn = new javax.swing.JButton();
-        products = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 0, 102));
 
@@ -127,7 +127,8 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        enterpriseLabel.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
+        enterpriseLabel.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseLabel.setText("Enterprise :");
 
         valueLabel.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
@@ -185,8 +186,9 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        products.setFont(new java.awt.Font("Academy Engraved LET", 1, 18)); // NOI18N
-        products.setText("Products");
+        jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Products");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -197,7 +199,7 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(products)
+                            .addComponent(jLabel2)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(showProductBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1102, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -228,7 +230,7 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(showProductBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(products))
+                    .addComponent(jLabel2))
                 .addGap(21, 21, 21)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
@@ -238,7 +240,7 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("RequestLabTestJPanel", new RequestFoodJPanel(userProcessContainer, userAccount, enterprise, business));
+        userProcessContainer.add("RequestLabTestJPanel", new RequestClothesJPanel(userProcessContainer, userAccount, enterprise, business));
         layout.next(userProcessContainer);
 
     }//GEN-LAST:event_requestTestJButtonActionPerformed
@@ -263,7 +265,7 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
 
         WorkRequest request = (WorkRequest)shelterWorkRequestTable.getValueAt(selectedRow, 0);
 
-        ArrayList<Products> productList = ((FoodRequirementRequest) request).getProductList();
+        ArrayList<Products> productList = ((ClothesRequirementRequest) request).getProductList();
         if (productList!=null){
             for (Products p : productList) {
                Object row[] = new Object[3];
@@ -278,9 +280,9 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel enterpriseLabel;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel products;
     private javax.swing.JButton refreshTestJButton;
     private javax.swing.JButton requestTestJButton;
     private javax.swing.JTable shelterWorkRequestTable;

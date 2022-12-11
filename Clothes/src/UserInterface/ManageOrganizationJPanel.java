@@ -51,17 +51,17 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbleoforganizations = new javax.swing.JTable();
+        tblOrganizations = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
-        btnAddanewOrganization = new javax.swing.JButton();
-        organizationavailJComboBox = new javax.swing.JComboBox();
-        ListofOrganizations = new javax.swing.JLabel();
-        belowicon = new javax.swing.JLabel();
+        btnAddOrganization = new javax.swing.JButton();
+        organizationJComboBox = new javax.swing.JComboBox();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        tbleoforganizations.setModel(new javax.swing.table.DefaultTableModel(
+        tblOrganizations.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -77,14 +77,13 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tbleoforganizations);
-        if (tbleoforganizations.getColumnModel().getColumnCount() > 0) {
-            tbleoforganizations.getColumnModel().getColumn(0).setResizable(false);
-            tbleoforganizations.getColumnModel().getColumn(1).setResizable(false);
+        jScrollPane1.setViewportView(tblOrganizations);
+        if (tblOrganizations.getColumnModel().getColumnCount() > 0) {
+            tblOrganizations.getColumnModel().getColumn(0).setResizable(false);
+            tblOrganizations.getColumnModel().getColumn(1).setResizable(false);
         }
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Organization Type");
 
         btnBack.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -95,86 +94,83 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnAddanewOrganization.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        btnAddanewOrganization.setText("Add a New Organisation");
-        btnAddanewOrganization.addActionListener(new java.awt.event.ActionListener() {
+        btnAddOrganization.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        btnAddOrganization.setText("Add a New Organization");
+        btnAddOrganization.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddanewOrganizationActionPerformed(evt);
+                btnAddOrganizationActionPerformed(evt);
             }
         });
 
-        organizationavailJComboBox.addActionListener(new java.awt.event.ActionListener() {
+        organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                organizationavailJComboBoxActionPerformed(evt);
+                organizationJComboBoxActionPerformed(evt);
             }
         });
 
-        ListofOrganizations.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
-        ListofOrganizations.setText("List Of Organizations");
+        jLabel4.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        jLabel4.setText("List Of Organizations");
 
-        belowicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/iconbelow.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/iconbelow.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ListofOrganizations)
+                            .addComponent(jLabel4)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(organizationavailJComboBox, 0, 232, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26))))
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(organizationJComboBox, 0, 232, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(107, 107, 107))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(339, 339, 339)
-                                .addComponent(btnAddanewOrganization, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(belowicon)))
+                        .addGap(196, 196, 196)
+                        .addComponent(btnAddOrganization, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(ListofOrganizations)
+                .addComponent(jLabel4)
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
-                        .addComponent(organizationavailJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(26, 26, 26)
-                .addComponent(btnAddanewOrganization, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                        .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(btnAddOrganization, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(btnBack)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(belowicon, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addGap(77, 77, 77)
+                .addComponent(jLabel1)
+                .addGap(16, 16, 16))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddanewOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddanewOrganizationActionPerformed
+    private void btnAddOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddOrganizationActionPerformed
 
-        Type type = (Type) organizationavailJComboBox.getSelectedItem();
+        Type type = (Type) organizationJComboBox.getSelectedItem();
         organizationDirectory.createOrganization(type);
         populateTable();
         
         JOptionPane.showMessageDialog(null, "Organization added successfully!");
-    }//GEN-LAST:event_btnAddanewOrganizationActionPerformed
+    }//GEN-LAST:event_btnAddOrganizationActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
 
@@ -184,13 +180,13 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void organizationavailJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationavailJComboBoxActionPerformed
+    private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
 
-    }//GEN-LAST:event_organizationavailJComboBoxActionPerformed
+    }//GEN-LAST:event_organizationJComboBoxActionPerformed
 
     private void populateTable() {
 
-        DefaultTableModel model = (DefaultTableModel) tbleoforganizations.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblOrganizations.getModel();
 
         model.setRowCount(0);
 
@@ -206,36 +202,36 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
     private void populateComboBox() {
 
-        organizationavailJComboBox.removeAllItems();
+        organizationJComboBox.removeAllItems();
 
         System.out.println("enterprise value " + enterprise.getEnterpriseType().getValue());
         
 //        if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnumType1.NGO.getValue())) {
-            organizationavailJComboBox.addItem(Organization.Type.NgoFoodOrganization);
+            organizationJComboBox.addItem(Organization.Type.NgoClothesOrganization);
 //        } else if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnumType2.Shelter.getValue())) {
-            organizationavailJComboBox.addItem(Organization.Type.ShelterFoodOrganization);
+            organizationJComboBox.addItem(Organization.Type.ShelterClothesOrganization);
 //        } else if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnumType3.Distributor.getValue())) {
-            organizationavailJComboBox.addItem(Organization.Type.DistributorFoodOrganization);
-            organizationavailJComboBox.addItem(Organization.Type.TransportFoodOrganization);
-            organizationavailJComboBox.addItem(Organization.Type.PackagingFoodOrganization);
+            organizationJComboBox.addItem(Organization.Type.DistributorClothesOrganization);
+            organizationJComboBox.addItem(Organization.Type.TransportClothesOrganization);
+            organizationJComboBox.addItem(Organization.Type.PackagingClothesOrganization);
 //        } else if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnumType4.QualityCheck.getValue())) {
-            organizationavailJComboBox.addItem(Organization.Type.QualityCheckFoodOrganization);
+            organizationJComboBox.addItem(Organization.Type.QualityCheckClothesOrganization);
 //        } else if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnumType5.Supplier.getValue())) {
-            organizationavailJComboBox.addItem(Organization.Type.SupplierFoodOrganization);
-            organizationavailJComboBox.addItem(Organization.Type.GroceryFoodOrganization);
+            organizationJComboBox.addItem(Organization.Type.SupplierClothesOrganization);
+            organizationJComboBox.addItem(Organization.Type.ClothesGrocerOrganization);
 //        }
 
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ListofOrganizations;
-    private javax.swing.JLabel belowicon;
-    private javax.swing.JButton btnAddanewOrganization;
+    private javax.swing.JButton btnAddOrganization;
     private javax.swing.JButton btnBack;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JComboBox organizationavailJComboBox;
-    private javax.swing.JTable tbleoforganizations;
+    private javax.swing.JComboBox organizationJComboBox;
+    private javax.swing.JTable tblOrganizations;
     // End of variables declaration//GEN-END:variables
 
 }

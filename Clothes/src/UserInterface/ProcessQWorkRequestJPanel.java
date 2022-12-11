@@ -5,7 +5,7 @@
  */
 package UserInterface;
 
-import Business.WorkQueue.FoodRequirementRequest;
+import Business.WorkQueue.ClothesRequirementRequest;
 import Business.WorkQueue.Products;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -32,9 +32,9 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
      * Creates new form ProcessQWorkRequestJPanel
      */
     private JPanel userProcessContainer;
-    private FoodRequirementRequest request;
+    private ClothesRequirementRequest request;
 
-    public ProcessQWorkRequestJPanel(JPanel userProcessContainer, FoodRequirementRequest request) {
+    public ProcessQWorkRequestJPanel(JPanel userProcessContainer, ClothesRequirementRequest request) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.request = request;
@@ -52,11 +52,11 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
 
     public void populateTable() {
 
-        DefaultTableModel model = (DefaultTableModel) tblProductstype1.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblProducts.getModel();
 
         model.setRowCount(0);
 
-        ArrayList<Products> productList = ((FoodRequirementRequest) request).getProductList();
+        ArrayList<Products> productList = ((ClothesRequirementRequest) request).getProductList();
         if (productList != null) {
             for (Products p : productList) {
                 Object row[] = new Object[3];
@@ -110,9 +110,9 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         backJButton = new javax.swing.JButton();
-        result = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblProductstype1 = new javax.swing.JTable();
+        tblProducts = new javax.swing.JTable();
         radioQ1Yes = new javax.swing.JRadioButton();
         radioQ1No = new javax.swing.JRadioButton();
         radioQ3Yes = new javax.swing.JRadioButton();
@@ -141,18 +141,18 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
         nutritionProgressBar = new javax.swing.JProgressBar();
         microbioProgressBar = new javax.swing.JProgressBar();
         spoilageProgressBar = new javax.swing.JProgressBar();
-        wearandtear = new javax.swing.JLabel();
-        chemicaltest = new javax.swing.JLabel();
-        spoilageindic = new javax.swing.JLabel();
-        microbio = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         resetBtn = new javax.swing.JButton();
         submitJButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         qualityCheckReport = new javax.swing.JTextArea();
-        btnGenerateSubmittedReport = new javax.swing.JButton();
-        btnDownload = new javax.swing.JButton();
+        btnGenerateReport = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 0, 102));
+        setBackground(new java.awt.Color(255, 255, 255));
 
         backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -161,11 +161,10 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        result.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
-        result.setForeground(new java.awt.Color(255, 255, 255));
-        result.setText("Result");
+        jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jLabel1.setText("Result");
 
-        tblProductstype1.setModel(new javax.swing.table.DefaultTableModel(
+        tblProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -181,7 +180,7 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tblProductstype1);
+        jScrollPane2.setViewportView(tblProducts);
 
         radioQ1Yes.setText("YES");
         radioQ1Yes.addActionListener(new java.awt.event.ActionListener() {
@@ -226,15 +225,12 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel15.setFont(new java.awt.Font("Bodoni MT", 1, 12)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(204, 204, 204));
         jLabel15.setText("Are all products free from Tears and Wears");
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel2.setText("Are the products Viable");
+        jLabel2.setText("Are the products within the expiry date? ");
 
         jLabel11.setFont(new java.awt.Font("Bodoni MT", 1, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("Are all products free from Pathogens?");
 
         radioQ4No.setText("NO");
@@ -252,7 +248,6 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel13.setFont(new java.awt.Font("Bodoni MT", 1, 12)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(204, 204, 204));
         jLabel13.setText("Are all products free from contaminants?");
 
         radioQ5Yes.setText("YES");
@@ -263,7 +258,6 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel17.setFont(new java.awt.Font("Bodoni MT", 1, 12)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(204, 204, 204));
         jLabel17.setText("Are all products free from Process Generated chemical?");
 
         radioQ5No.setText("NO");
@@ -281,8 +275,7 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel19.setFont(new java.awt.Font("Bodoni MT", 1, 12)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel19.setText("Are all products free from Spoilage Indicator? ");
+        jLabel19.setText("Are all products free from Spoilage Indicator?");
 
         radioQ6No.setText("NO");
         radioQ6No.addActionListener(new java.awt.event.ActionListener() {
@@ -292,7 +285,6 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel21.setFont(new java.awt.Font("Bodoni MT", 1, 12)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(204, 204, 204));
         jLabel21.setText("Are all the products available and ready to be distributed?");
 
         radioQ7Yes.setText("YES");
@@ -313,8 +305,7 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
         resultJTextField.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         resultJTextField.setForeground(new java.awt.Color(102, 204, 0));
 
-        jLabel3.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         jLabel3.setText("FINAL RESULT");
 
         finalProgressBar.setBackground(new java.awt.Color(102, 255, 102));
@@ -331,21 +322,17 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
 
         spoilageProgressBar.setStringPainted(true);
 
-        wearandtear.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
-        wearandtear.setForeground(new java.awt.Color(255, 255, 255));
-        wearandtear.setText("WEAR AND TEAR TEST  ");
+        jLabel7.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jLabel7.setText("WEAR AND TEAR TEST  ");
 
-        chemicaltest.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
-        chemicaltest.setForeground(new java.awt.Color(255, 255, 255));
-        chemicaltest.setText("CHEMICAL TEST  ");
+        jLabel8.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jLabel8.setText("CHEMICAL TEST  ");
 
-        spoilageindic.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
-        spoilageindic.setForeground(new java.awt.Color(255, 255, 255));
-        spoilageindic.setText("SPOILAGE INDICATOR TEST");
+        jLabel9.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jLabel9.setText("SPOILAGE INDICATOR TEST");
 
-        microbio.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
-        microbio.setForeground(new java.awt.Color(255, 255, 255));
-        microbio.setText("MICROBIOLOGICAL TEST ");
+        jLabel10.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jLabel10.setText("MICROBIOLOGICAL TEST ");
 
         resetBtn.setText("Reset");
         resetBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -365,17 +352,17 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
         qualityCheckReport.setRows(5);
         jScrollPane1.setViewportView(qualityCheckReport);
 
-        btnGenerateSubmittedReport.setText("Generate Summarized Report");
-        btnGenerateSubmittedReport.addActionListener(new java.awt.event.ActionListener() {
+        btnGenerateReport.setText("Generate Summarized Report");
+        btnGenerateReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenerateSubmittedReportActionPerformed(evt);
+                btnGenerateReportActionPerformed(evt);
             }
         });
 
-        btnDownload.setText("Download Report");
-        btnDownload.addActionListener(new java.awt.event.ActionListener() {
+        btnSave.setText("Download Report");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDownloadActionPerformed(evt);
+                btnSaveActionPerformed(evt);
             }
         });
 
@@ -448,16 +435,28 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(chemicaltest)
-                                    .addComponent(spoilageindic))
+                                    .addComponent(jLabel1)
+                                    .addComponent(resultJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(6, 6, 6)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(backJButton))
+                            .addComponent(jLabel3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(94, 94, 94)
+                                .addComponent(finalProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 872, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9))
                                 .addGap(13, 13, 13)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(chemicalProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(spoilageProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(21, 21, 21)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(wearandtear)
-                                    .addComponent(microbio))
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel10))
                                 .addGap(19, 19, 19)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(nutritionProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -471,23 +470,8 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
                                             .addComponent(resetBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(btnGenerateSubmittedReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(btnDownload, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(result)
-                                            .addComponent(resultJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(10, 10, 10)
-                                        .addComponent(backJButton))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(finalProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 872, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                            .addComponent(btnGenerateReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                         .addGap(42, 42, 42))))
         );
         layout.setVerticalGroup(
@@ -497,7 +481,7 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(13, 13, 13)
-                        .addComponent(result)
+                        .addComponent(jLabel1)
                         .addGap(3, 3, 3)
                         .addComponent(resultJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -569,32 +553,34 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(resetBtn)
-                            .addComponent(btnDownload)))
-                    .addComponent(btnGenerateSubmittedReport)
+                            .addComponent(btnSave)))
+                    .addComponent(btnGenerateReport)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(chemicaltest)
+                                .addComponent(jLabel8)
                                 .addGap(3, 3, 3)
-                                .addComponent(spoilageindic))
+                                .addComponent(jLabel9))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(chemicalProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(3, 3, 3)
                                 .addComponent(spoilageProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(wearandtear)
+                                .addComponent(jLabel7)
                                 .addGap(3, 3, 3)
-                                .addComponent(microbio))
+                                .addComponent(jLabel10))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(nutritionProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(3, 3, 3)
                                 .addComponent(microbioProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel3))
                     .addComponent(finalProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -923,7 +909,7 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
         microbioProgressBar.setValue(value);
         spoilageProgressBar.setValue(value);
         
-        btnGenerateSubmittedReport.setEnabled(true);
+        btnGenerateReport.setEnabled(true);
         resultJTextField.setText("AWAITING RESULT");
         qualityCheckReport.setText("");
     }//GEN-LAST:event_resetBtnActionPerformed
@@ -931,13 +917,13 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
         request.setRequestResult(resultJTextField.getText());
         request.setStatus("Quality Check Approved");
-        JOptionPane.showMessageDialog(null, "Food Request Approved for Quality Check");
+        JOptionPane.showMessageDialog(null, "Clothes Request Approved for Quality Check");
     }//GEN-LAST:event_submitJButtonActionPerformed
 
-    private void btnGenerateSubmittedReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateSubmittedReportActionPerformed
+    private void btnGenerateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateReportActionPerformed
 
         //************************ Start of radio button values
-        btnGenerateSubmittedReport.setEnabled(false);
+        btnGenerateReport.setEnabled(false);
         String radioText1 = null;
         String radioText2 = null;
         String radioText3 = null;
@@ -1002,8 +988,8 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
 qualityCheckReport.append("\t\t QUALITY CHECK REPORT \n"
 + "\n Date of Quality Check : " + now +"\tResult :"+ resultJTextField.getText()
 + "\n------------------------------------------------------------------------------------------------------------------------------"
-+ "\n1) Are the products Viable : " + radioText1 + "\n"
-+ "\n2) Are all products free from Wear and tear? :" + radioText2 + "\n"
++ "\n1) Are the products within the expiry date? : " + radioText1 + "\n"
++ "\n2) Are all products free from Adulteration? :" + radioText2 + "\n"
 + "\n3) Are all products free from Pathogens? :" + radioText3 + "\n"
 + "\n4) Are all products free from contaminants? :" + radioText4 + "\n"
 + "\n5) Are all products free from Process Generated chemical? :" + radioText5 + "\n"
@@ -1013,12 +999,12 @@ qualityCheckReport.append("\t\t QUALITY CHECK REPORT \n"
 );
 qualityCheckReport.setFont(new Font("Serif", Font.ITALIC, 16));
 
-    btnGenerateSubmittedReport.setEnabled(false);
+    btnGenerateReport.setEnabled(false);
     
 
-    }//GEN-LAST:event_btnGenerateSubmittedReportActionPerformed
+    }//GEN-LAST:event_btnGenerateReportActionPerformed
 
-    private void btnDownloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDownloadActionPerformed
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
 
         //*********************** Printing logic 
         try {
@@ -1035,16 +1021,17 @@ qualityCheckReport.setFont(new Font("Serif", Font.ITALIC, 16));
         }
 
 
-    }//GEN-LAST:event_btnDownloadActionPerformed
+    }//GEN-LAST:event_btnSaveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
-    private javax.swing.JButton btnDownload;
-    private javax.swing.JButton btnGenerateSubmittedReport;
+    private javax.swing.JButton btnGenerateReport;
+    private javax.swing.JButton btnSave;
     private javax.swing.JProgressBar chemicalProgressBar;
-    private javax.swing.JLabel chemicaltest;
     private javax.swing.JProgressBar finalProgressBar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
@@ -1053,9 +1040,11 @@ qualityCheckReport.setFont(new Font("Serif", Font.ITALIC, 16));
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel microbio;
     private javax.swing.JProgressBar microbioProgressBar;
     private javax.swing.JProgressBar nutritionProgressBar;
     private javax.swing.JTextArea qualityCheckReport;
@@ -1074,12 +1063,9 @@ qualityCheckReport.setFont(new Font("Serif", Font.ITALIC, 16));
     private javax.swing.JRadioButton radioQ7No;
     private javax.swing.JRadioButton radioQ7Yes;
     private javax.swing.JButton resetBtn;
-    private javax.swing.JLabel result;
     private javax.swing.JTextField resultJTextField;
     private javax.swing.JProgressBar spoilageProgressBar;
-    private javax.swing.JLabel spoilageindic;
     private javax.swing.JButton submitJButton;
-    private javax.swing.JTable tblProductstype1;
-    private javax.swing.JLabel wearandtear;
+    private javax.swing.JTable tblProducts;
     // End of variables declaration//GEN-END:variables
 }

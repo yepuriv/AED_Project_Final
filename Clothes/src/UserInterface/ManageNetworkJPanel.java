@@ -43,22 +43,22 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        availablecitiestbleJTable = new javax.swing.JTable();
-        CityName = new javax.swing.JLabel();
-        AddCityButto = new javax.swing.JButton();
-        AddCity = new javax.swing.JTextField();
+        networkJTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        submitJButton = new javax.swing.JButton();
+        nameJTextField = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
-        ManageCities = new javax.swing.JLabel();
-        belowicon = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 51, 102));
+        setBackground(new java.awt.Color(255, 255, 255));
 
-        availablecitiestbleJTable.setModel(new javax.swing.table.DefaultTableModel(
+        networkJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Available Cities"
+                "Name"
             }
         ) {
             Class[] types = new Class [] {
@@ -76,21 +76,18 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(availablecitiestbleJTable);
+        jScrollPane1.setViewportView(networkJTable);
 
-        CityName.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
-        CityName.setForeground(new java.awt.Color(255, 255, 255));
-        CityName.setText("Name");
+        jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jLabel1.setText("Name");
 
-        AddCityButto.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        AddCityButto.setText("Add City");
-        AddCityButto.addActionListener(new java.awt.event.ActionListener() {
+        submitJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        submitJButton.setText("Submit");
+        submitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddCityButtoActionPerformed(evt);
+                submitJButtonActionPerformed(evt);
             }
         });
-
-        AddCity.setText("Add City");
 
         backJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         backJButton.setText("Back");
@@ -100,11 +97,10 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             }
         });
 
-        ManageCities.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
-        ManageCities.setForeground(new java.awt.Color(255, 255, 255));
-        ManageCities.setText("Add/Manage Cities");
+        jLabel4.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        jLabel4.setText("Add Cities");
 
-        belowicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/iconbelow.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/iconbelow.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -115,19 +111,19 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 706, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(belowicon)
+                        .addGap(33, 33, 33)
+                        .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9))
+                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ManageCities)
+                            .addComponent(jLabel4)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(CityName)
-                                .addGap(153, 153, 153)
-                                .addComponent(AddCity, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(49, 49, 49)
-                                .addComponent(AddCityButto, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(nameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(submitJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -135,43 +131,43 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(ManageCities)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CityName)
-                    .addComponent(AddCityButto)
-                    .addComponent(AddCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(backJButton, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(belowicon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(jLabel1)
+                    .addComponent(submitJButton)
+                    .addComponent(nameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backJButton)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AddCityButtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCityButtoActionPerformed
+    private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
 
-        String netName = AddCity.getText();
+        String netName = nameJTextField.getText();
 
         if (netName.equalsIgnoreCase("")) {
 
             JOptionPane.showMessageDialog(null, "Network Name Cannot Be Empty!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        String name = AddCity.getText();
+        String name = nameJTextField.getText();
 
         Network network = ecosystem.createAndAddNetwork();
         network.setName(name);
 
         populateNetworkTable();
         JOptionPane.showMessageDialog(null, "Network Added Successfully!");
-        AddCity.setText("");
-    }//GEN-LAST:event_AddCityButtoActionPerformed
+        nameJTextField.setText("");
+    }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void populateNetworkTable() {
-        DefaultTableModel model = (DefaultTableModel) availablecitiestbleJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) networkJTable.getModel();
 
         model.setRowCount(0);
         for (Network network : ecosystem.getNetworkList()) {
@@ -193,13 +189,13 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField AddCity;
-    private javax.swing.JButton AddCityButto;
-    private javax.swing.JLabel CityName;
-    private javax.swing.JLabel ManageCities;
-    private javax.swing.JTable availablecitiestbleJTable;
     private javax.swing.JButton backJButton;
-    private javax.swing.JLabel belowicon;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField nameJTextField;
+    private javax.swing.JTable networkJTable;
+    private javax.swing.JButton submitJButton;
     // End of variables declaration//GEN-END:variables
 }

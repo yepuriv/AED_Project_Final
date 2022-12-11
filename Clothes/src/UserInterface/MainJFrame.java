@@ -5,20 +5,25 @@
  */
 package UserInterface;
 
-import Database.ClothesDb;
+import Database.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
-
+import java.util.Properties;
+import javax.mail.Message.RecipientType;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
  *
- * @author Varun
+ * @author varunkumar
  */
 public class MainJFrame extends javax.swing.JFrame {
 
@@ -27,7 +32,7 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     
     private EcoSystem system;
-    private ClothesDb dB4OUtil = ClothesDb.getInstance();
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     
     public MainJFrame() {
         initComponents();
@@ -45,29 +50,29 @@ public class MainJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jSplitPane = new javax.swing.JSplitPane();
-        MainContainer = new javax.swing.JPanel();
+        upperContainer = new javax.swing.JPanel();
         txtUsername = new javax.swing.JTextField();
         txtPassword = new javax.swing.JTextField();
         btnLogin = new javax.swing.JButton();
-        UserIdjLabel1 = new javax.swing.JLabel();
-        UserIdPassjLabel2 = new javax.swing.JLabel();
-        btnLogoutOfProfile = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        btnLogout = new javax.swing.JButton();
         txtPasswordField = new javax.swing.JPasswordField();
         enterpriseLabel = new javax.swing.JLabel();
-        mainIcon = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         userProcessContainer = new javax.swing.JPanel();
-        LowerContainer = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jSplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        MainContainer.setBackground(new java.awt.Color(255, 51, 102));
-        MainContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        MainContainer.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 104, -1));
+        upperContainer.setBackground(new java.awt.Color(255, 0, 102));
+        upperContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        upperContainer.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 104, -1));
 
         txtPassword.setUI(null);
-        MainContainer.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 37, 3, 0));
+        upperContainer.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 37, 3, 0));
 
         btnLogin.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         btnLogin.setText("Login");
@@ -76,48 +81,51 @@ public class MainJFrame extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        MainContainer.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 104, 20));
+        upperContainer.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 104, 20));
 
-        UserIdjLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        UserIdjLabel1.setText("UserId");
-        MainContainer.add(UserIdjLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("UserID");
+        upperContainer.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, -1, -1));
 
-        UserIdPassjLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        UserIdPassjLabel2.setText("Password");
-        MainContainer.add(UserIdPassjLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Password");
+        upperContainer.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
 
-        btnLogoutOfProfile.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        btnLogoutOfProfile.setText("Logout");
-        btnLogoutOfProfile.addActionListener(new java.awt.event.ActionListener() {
+        btnLogout.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        btnLogout.setText("Logout");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogoutOfProfileActionPerformed(evt);
+                btnLogoutActionPerformed(evt);
             }
         });
-        MainContainer.add(btnLogoutOfProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 140, 80, 20));
-        MainContainer.add(txtPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 104, -1));
+        upperContainer.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 130, 120, 20));
+        upperContainer.add(txtPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 104, -1));
 
-        enterpriseLabel.setFont(new java.awt.Font("Academy Engraved LET", 1, 36)); // NOI18N
-        enterpriseLabel.setText("FOOD DONATION SYSTEM");
-        MainContainer.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 500, 60));
+        enterpriseLabel.setFont(new java.awt.Font("Bodoni MT", 1, 36)); // NOI18N
+        enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
+        enterpriseLabel.setText("CLOTHES DONATION SYSTEM");
+        upperContainer.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 560, 60));
 
-        mainIcon.setBackground(new java.awt.Color(0, 0, 0));
-        mainIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/LOGO.png"))); // NOI18N
-        MainContainer.add(mainIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 0, 180, 180));
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/iconabove.png"))); // NOI18N
+        upperContainer.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 0, 180, 180));
 
-        jSplitPane.setTopComponent(MainContainer);
+        jSplitPane.setTopComponent(upperContainer);
 
         userProcessContainer.setBackground(new java.awt.Color(0, 0, 0));
         userProcessContainer.setMaximumSize(new java.awt.Dimension(1500, 1000));
         userProcessContainer.setSize(new java.awt.Dimension(1500, 1000));
         userProcessContainer.setLayout(new java.awt.CardLayout());
 
-        LowerContainer.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        LowerContainer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/background.jpeg"))); // NOI18N
-        LowerContainer.setMaximumSize(new java.awt.Dimension(1500, 1000));
-        LowerContainer.setMinimumSize(new java.awt.Dimension(1500, 1000));
-        LowerContainer.setPreferredSize(new java.awt.Dimension(1500, 1000));
-        LowerContainer.setSize(new java.awt.Dimension(1500, 1000));
-        userProcessContainer.add(LowerContainer, "card2");
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/background.jpeg"))); // NOI18N
+        jLabel4.setMaximumSize(new java.awt.Dimension(1500, 1000));
+        jLabel4.setMinimumSize(new java.awt.Dimension(1500, 1000));
+        jLabel4.setPreferredSize(new java.awt.Dimension(1500, 1000));
+        jLabel4.setSize(new java.awt.Dimension(1500, 1000));
+        userProcessContainer.add(jLabel4, "card2");
 
         jSplitPane.setRightComponent(userProcessContainer);
 
@@ -133,7 +141,7 @@ public class MainJFrame extends javax.swing.JFrame {
         
         if(uname.equalsIgnoreCase("") || password1.equals("") || (uname.equalsIgnoreCase("") && password1.equals(""))){
             
-            JOptionPane.showMessageDialog(null, "Please Enter Proper Id", "Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Fields Cannot Be Empty!", "Warning",JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -182,7 +190,7 @@ public class MainJFrame extends javax.swing.JFrame {
         }
 
         if(userAccount==null){
-            JOptionPane.showMessageDialog(null, "Wrong UserId or Password");
+            JOptionPane.showMessageDialog(null, "Invalid credentials");
             return;
         }
         else{
@@ -191,18 +199,48 @@ public class MainJFrame extends javax.swing.JFrame {
             layout.next(userProcessContainer);
         }
         
-       
+        //***************************** Starting of Email Logic
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", 465);
+        props.put("mail.smtp.user", "aed123.fms@gmail.com");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.debug", "true");
+        props.put("mail.smtp.socketFactory.port", 465);
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.ssl.protocols", "TLSv1.2");
+        props.put("mail.smtp.socketFactory.fallback", "false"); 
+        try {
+             
+                Session session = Session.getDefaultInstance(props, null);
+                session.setDebug(true);
+                MimeMessage message = new MimeMessage(session);
+                message.setText("The person login is" + " " +userName);
+                message.setSubject("Login Person");
+                message.setFrom(new InternetAddress("aed123.fms@gmail.com"));
+                message.addRecipient(RecipientType.TO, new InternetAddress("aed123.fms@gmail.com"));
+                message.saveChanges();
+                Transport transport = session.getTransport("smtp");
+                transport.connect("smtp.gmail.com", "aed123.fms@gmail.com", "aed@fms123");
+                transport.sendMessage(message, message.getAllRecipients());
+                transport.close();
+        } catch (Exception e) {
+            e.printStackTrace();  
+        }  
+        //*************************************End of addition for sending mail
+
 
         btnLogin.setEnabled(false);
-        btnLogoutOfProfile.setEnabled(true);
+        btnLogout.setEnabled(true);
         txtUsername.setEnabled(false);
         txtPassword.setEnabled(false);
 
     }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void btnLogoutOfProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutOfProfileActionPerformed
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         
-        btnLogoutOfProfile.setEnabled(false);
+        btnLogout.setEnabled(false);
         txtUsername.setEnabled(true);
         txtPasswordField.setEnabled(true);
         btnLogin.setEnabled(true);
@@ -216,7 +254,7 @@ public class MainJFrame extends javax.swing.JFrame {
         CardLayout crdLyt = (CardLayout) userProcessContainer.getLayout();
         crdLyt.next(userProcessContainer);
         dB4OUtil.storeSystem(system);
-    }//GEN-LAST:event_btnLogoutOfProfileActionPerformed
+    }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,18 +292,18 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LowerContainer;
-    private javax.swing.JPanel MainContainer;
-    private javax.swing.JLabel UserIdPassjLabel2;
-    private javax.swing.JLabel UserIdjLabel1;
     private javax.swing.JButton btnLogin;
-    private javax.swing.JButton btnLogoutOfProfile;
+    private javax.swing.JButton btnLogout;
     private javax.swing.JLabel enterpriseLabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JSplitPane jSplitPane;
-    private javax.swing.JLabel mainIcon;
     private javax.swing.JTextField txtPassword;
     private javax.swing.JPasswordField txtPasswordField;
     private javax.swing.JTextField txtUsername;
+    private javax.swing.JPanel upperContainer;
     private javax.swing.JPanel userProcessContainer;
     // End of variables declaration//GEN-END:variables
 }
