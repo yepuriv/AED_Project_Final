@@ -87,9 +87,9 @@
                               <EmptySpace min="83" pref="83" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="btnManageEnterprise" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="btnAddEnterprise" alignment="0" max="32767" attributes="0"/>
                                       <Component id="btnManageNetwork" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="btnManageAdmin" max="32767" attributes="0"/>
+                                      <Component id="btnCreateAdmin" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="enterpriseLabel" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
@@ -121,9 +121,9 @@
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="btnManageNetwork" min="-2" pref="36" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnManageEnterprise" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="btnAddEnterprise" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="btnManageAdmin" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnCreateAdmin" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="353" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" pref="29" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
@@ -165,7 +165,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageNetworkActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnManageEnterprise">
+            <Component class="javax.swing.JButton" name="btnAddEnterprise">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Bodoni MT" size="14" style="1"/>
@@ -173,10 +173,10 @@
                 <Property name="text" type="java.lang.String" value="Add/Manage Enterprise"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageEnterpriseActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddEnterpriseActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnManageAdmin">
+            <Component class="javax.swing.JButton" name="btnCreateAdmin">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Bodoni MT" size="14" style="1"/>
@@ -184,7 +184,7 @@
                 <Property name="text" type="java.lang.String" value="Create/Manage Enterprise Admin"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageAdminActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateAdminActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="enterpriseLabel">

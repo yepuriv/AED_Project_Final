@@ -47,11 +47,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane = new javax.swing.JSplitPane();
         upperContainer = new javax.swing.JPanel();
-        txtUsername = new javax.swing.JTextField();
-        txtPassword = new javax.swing.JTextField();
-        btnLogin = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        txtUsernametoenter = new javax.swing.JTextField();
+        txtPasswordenter = new javax.swing.JTextField();
+        btnLoginSys = new javax.swing.JButton();
+        userid = new javax.swing.JLabel();
+        password = new javax.swing.JLabel();
         btnLogout = new javax.swing.JButton();
         txtPasswordField = new javax.swing.JPasswordField();
         enterpriseLabel = new javax.swing.JLabel();
@@ -65,29 +65,35 @@ public class MainJFrame extends javax.swing.JFrame {
 
         upperContainer.setBackground(new java.awt.Color(255, 0, 102));
         upperContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        upperContainer.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 104, -1));
 
-        txtPassword.setUI(null);
-        upperContainer.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 37, 3, 0));
-
-        btnLogin.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        btnLogin.setText("Login");
-        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+        txtUsernametoenter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoginActionPerformed(evt);
+                txtUsernametoenterActionPerformed(evt);
             }
         });
-        upperContainer.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 104, 20));
+        upperContainer.add(txtUsernametoenter, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 104, -1));
 
-        jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("UserID");
-        upperContainer.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, -1, -1));
+        txtPasswordenter.setUI(null);
+        upperContainer.add(txtPasswordenter, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 37, 3, 0));
 
-        jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Password");
-        upperContainer.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
+        btnLoginSys.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        btnLoginSys.setText("Login");
+        btnLoginSys.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginSysActionPerformed(evt);
+            }
+        });
+        upperContainer.add(btnLoginSys, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 104, 20));
+
+        userid.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        userid.setForeground(new java.awt.Color(255, 255, 255));
+        userid.setText("UserID");
+        upperContainer.add(userid, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, -1, -1));
+
+        password.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        password.setForeground(new java.awt.Color(255, 255, 255));
+        password.setText("Password");
+        upperContainer.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
 
         btnLogout.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         btnLogout.setText("Logout");
@@ -99,7 +105,7 @@ public class MainJFrame extends javax.swing.JFrame {
         upperContainer.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 130, 120, 20));
         upperContainer.add(txtPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 104, -1));
 
-        enterpriseLabel.setFont(new java.awt.Font("Bodoni MT", 1, 36)); // NOI18N
+        enterpriseLabel.setFont(new java.awt.Font("Academy Engraved LET", 1, 36)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseLabel.setText("CLOTHES DONATION SYSTEM");
         upperContainer.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 560, 60));
@@ -130,9 +136,9 @@ public class MainJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+    private void btnLoginSysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginSysActionPerformed
         
-        String uname = txtUsername.getText();
+        String uname = txtUsernametoenter.getText();
         char[] password1 = txtPasswordField.getPassword();
         
         if(uname.equalsIgnoreCase("") || password1.equals("") || (uname.equalsIgnoreCase("") && password1.equals(""))){
@@ -142,7 +148,7 @@ public class MainJFrame extends javax.swing.JFrame {
         }
 
         // Get user name
-        String userName = txtUsername.getText();
+        String userName = txtUsernametoenter.getText();
         // Get Password
         char[] passwordCharArray = txtPasswordField.getPassword();
         String password = String.valueOf(passwordCharArray);
@@ -196,21 +202,21 @@ public class MainJFrame extends javax.swing.JFrame {
         }
         
        
-        btnLogin.setEnabled(false);
+        btnLoginSys.setEnabled(false);
         btnLogout.setEnabled(true);
-        txtUsername.setEnabled(false);
-        txtPassword.setEnabled(false);
+        txtUsernametoenter.setEnabled(false);
+        txtPasswordenter.setEnabled(false);
 
-    }//GEN-LAST:event_btnLoginActionPerformed
+    }//GEN-LAST:event_btnLoginSysActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         
         btnLogout.setEnabled(false);
-        txtUsername.setEnabled(true);
+        txtUsernametoenter.setEnabled(true);
         txtPasswordField.setEnabled(true);
-        btnLogin.setEnabled(true);
+        btnLoginSys.setEnabled(true);
 
-        txtUsername.setText("");
+        txtUsernametoenter.setText("");
         txtPasswordField.setText("");
 
         userProcessContainer.removeAll();
@@ -220,6 +226,10 @@ public class MainJFrame extends javax.swing.JFrame {
         crdLyt.next(userProcessContainer);
         dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void txtUsernametoenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernametoenterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsernametoenterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,18 +267,18 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnLoginSys;
     private javax.swing.JButton btnLogout;
     private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JSplitPane jSplitPane;
-    private javax.swing.JTextField txtPassword;
+    private javax.swing.JLabel password;
     private javax.swing.JPasswordField txtPasswordField;
-    private javax.swing.JTextField txtUsername;
+    private javax.swing.JTextField txtPasswordenter;
+    private javax.swing.JTextField txtUsernametoenter;
     private javax.swing.JPanel upperContainer;
     private javax.swing.JPanel userProcessContainer;
+    private javax.swing.JLabel userid;
     // End of variables declaration//GEN-END:variables
 }

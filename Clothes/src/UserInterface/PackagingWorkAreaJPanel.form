@@ -107,7 +107,7 @@
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <Component id="refreshJButton" min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="267" max="32767" attributes="0"/>
+              <EmptySpace pref="265" max="32767" attributes="0"/>
               <Component id="btnSentToTransport" min="-2" pref="38" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -132,7 +132,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Bodoni MT" size="24" style="1"/>
+          <Font name="Academy Engraved LET" size="24" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Packaging Dashboard"/>
       </Properties>
@@ -252,7 +252,7 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Bodoni MT" size="18" style="1"/>
+          <Font name="Academy Engraved LET" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Products"/>
       </Properties>

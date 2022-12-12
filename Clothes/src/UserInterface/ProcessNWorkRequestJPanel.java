@@ -48,24 +48,24 @@ public class ProcessNWorkRequestJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        submitJButton = new javax.swing.JButton();
+        submitreqJButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        processreq = new javax.swing.JLabel();
         radioRejected = new javax.swing.JRadioButton();
         radioApproved = new javax.swing.JRadioButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        submitJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        submitJButton.setText("Submit Result");
-        submitJButton.addActionListener(new java.awt.event.ActionListener() {
+        submitreqJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        submitreqJButton.setText("Submit Result");
+        submitreqJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitJButtonActionPerformed(evt);
+                submitreqJButtonActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Academy Engraved LET", 1, 18)); // NOI18N
         jLabel1.setText("Result:");
 
         backJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -76,16 +76,16 @@ public class ProcessNWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel2.setText("Processing Request");
+        processreq.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
+        processreq.setText("Processing Request");
 
         radioRejected.setBackground(new java.awt.Color(255, 0, 102));
         radioRejected.setForeground(new java.awt.Color(255, 255, 255));
-        radioRejected.setText("Rejected");
+        radioRejected.setText("Reject");
 
         radioApproved.setBackground(new java.awt.Color(255, 0, 102));
         radioApproved.setForeground(new java.awt.Color(255, 255, 255));
-        radioApproved.setText("Approved");
+        radioApproved.setText("Approve");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -95,11 +95,11 @@ public class ProcessNWorkRequestJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addComponent(jLabel2))
+                        .addComponent(processreq))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(submitJButton, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                            .addComponent(submitreqJButton, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
                             .addComponent(backJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
@@ -108,13 +108,13 @@ public class ProcessNWorkRequestJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(radioRejected)
                             .addComponent(radioApproved))))
-                .addContainerGap(468, Short.MAX_VALUE))
+                .addContainerGap(473, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jLabel2)
+                .addComponent(processreq)
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
@@ -122,14 +122,14 @@ public class ProcessNWorkRequestJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(radioRejected)
                 .addGap(31, 31, 31)
-                .addComponent(submitJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(submitreqJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
+    private void submitreqJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitreqJButtonActionPerformed
          
         if(radioApproved.isSelected()){   
            // request.setRequestResult("Approved");
@@ -149,7 +149,7 @@ public class ProcessNWorkRequestJPanel extends javax.swing.JPanel {
         }
         
         
-    }//GEN-LAST:event_submitJButtonActionPerformed
+    }//GEN-LAST:event_submitreqJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
 
@@ -167,9 +167,9 @@ public class ProcessNWorkRequestJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel processreq;
     private javax.swing.JRadioButton radioApproved;
     private javax.swing.JRadioButton radioRejected;
-    private javax.swing.JButton submitJButton;
+    private javax.swing.JButton submitreqJButton;
     // End of variables declaration//GEN-END:variables
 }
