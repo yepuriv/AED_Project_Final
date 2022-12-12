@@ -28,7 +28,7 @@
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="ProductsDist" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -43,19 +43,19 @@
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="showProductBtn" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="assignJButton" min="-2" pref="210" max="-2" attributes="0"/>
+                                      <Component id="assignWorkJButton" min="-2" pref="210" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="processJButton" min="-2" pref="210" max="-2" attributes="0"/>
+                                      <Component id="processWorkJButton" min="-2" pref="210" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="btnSendtoQualityCheck" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnSendforQualityCheck" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="btnSendtoPackaging" min="-2" pref="210" max="-2" attributes="0"/>
+                                      <Component id="btnSendforPackaging" min="-2" pref="210" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="280" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel1" min="-2" pref="347" max="-2" attributes="0"/>
+                              <Component id="DistributorDash" min="-2" pref="347" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="refreshJButton" min="-2" pref="112" max="-2" attributes="0"/>
                           </Group>
@@ -72,20 +72,20 @@
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="refreshJButton" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="DistributorDash" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="233" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="assignJButton" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="processJButton" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="btnSendtoQualityCheck" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="btnSendtoPackaging" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="assignWorkJButton" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="processWorkJButton" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="btnSendforQualityCheck" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="btnSendforPackaging" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="43" max="32767" attributes="0"/>
+              <EmptySpace pref="41" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ProductsDist" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="showProductBtn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -96,26 +96,26 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="assignJButton">
+    <Component class="javax.swing.JButton" name="assignWorkJButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Bodoni MT" size="14" style="1"/>
+          <Font name="Academy Engraved LET" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Assign Work Request"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="assignJButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="assignWorkJButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="processJButton">
+    <Component class="javax.swing.JButton" name="processWorkJButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Bodoni MT" size="14" style="1"/>
+          <Font name="Academy Engraved LET" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Process Work Request"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="processJButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="processWorkJButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="refreshJButton">
@@ -129,34 +129,34 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="refreshJButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnSendtoQualityCheck">
+    <Component class="javax.swing.JButton" name="btnSendforQualityCheck">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Bodoni MT" size="14" style="1"/>
+          <Font name="Academy Engraved LET" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Send for Quality Check"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSendtoQualityCheckActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSendforQualityCheckActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="DistributorDash">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Bodoni MT" size="24" style="1"/>
+          <Font name="Academy Engraved LET" size="24" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Distributor Dashboard"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnSendtoPackaging">
+    <Component class="javax.swing.JButton" name="btnSendforPackaging">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Bodoni MT" size="14" style="1"/>
+          <Font name="Academy Engraved LET" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Send for Packaging"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSendtoPackagingActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSendforPackagingActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane3">
@@ -236,10 +236,10 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="showProductBtnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="ProductsDist">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Bodoni MT" size="18" style="1"/>
+          <Font name="Academy Engraved LET" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Products"/>
       </Properties>

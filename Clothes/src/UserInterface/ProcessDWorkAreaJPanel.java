@@ -84,10 +84,10 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        resultJTextField = new javax.swing.JTextField();
+        messagesJTextField = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
         submitJButton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        processreq = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblProducts = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -121,9 +121,9 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel2.setText("Process Request");
+        processreq.setBackground(new java.awt.Color(0, 0, 0));
+        processreq.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
+        processreq.setText("Process Request");
 
         tblProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -153,7 +153,7 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblInventory);
 
-        jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
         jLabel3.setText("Inventory Dashboard");
 
         lblInventoryCount.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -212,7 +212,7 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                                .addComponent(processreq)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1)
@@ -222,7 +222,7 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
-                                .addComponent(resultJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(messagesJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(63, 63, 63)
                                 .addComponent(submitJButton)))
                         .addContainerGap())))
@@ -232,7 +232,7 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(processreq)
                     .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -253,9 +253,9 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
                         .addGap(3, 3, 3)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(submitJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(resultJTextField)
+                            .addComponent(messagesJTextField)
                             .addComponent(jLabel1))))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -272,8 +272,8 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
 
-        resultJTextField.setText("Approved");
-        request.setRequestResult(resultJTextField.getText());
+        messagesJTextField.setText("Approved");
+        request.setRequestResult(messagesJTextField.getText());
         request.setStatus("Approved by Distributor");
 
         int suppCount = 0, reqCount = 0, newresult = 0;
@@ -434,13 +434,13 @@ public class ProcessDWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSupplierClothes;
     private javax.swing.JComboBox<String> jComboBoxProductType;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblInventoryCount;
-    private javax.swing.JTextField resultJTextField;
+    private javax.swing.JTextField messagesJTextField;
+    private javax.swing.JLabel processreq;
     private javax.swing.JButton submitJButton;
     private javax.swing.JTable tblInventory;
     private javax.swing.JTable tblProducts;

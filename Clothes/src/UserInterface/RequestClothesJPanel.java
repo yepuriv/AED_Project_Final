@@ -280,7 +280,7 @@ public class RequestClothesJPanel extends javax.swing.JPanel {
         });
         add(backJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 461, 338, 39));
 
-        enterpriseLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        enterpriseLabel1.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
         enterpriseLabel1.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseLabel1.setText("Enterprise :");
         add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 280, 30));

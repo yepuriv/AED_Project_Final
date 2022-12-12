@@ -46,26 +46,26 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         passwordJTextField = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        emprole = new javax.swing.JLabel();
         employeeJComboBox = new javax.swing.JComboBox();
         btnBack = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        organrole = new javax.swing.JLabel();
         createUserJButton = new javax.swing.JButton();
         organizationJComboBox = new javax.swing.JComboBox();
         nameJTextField = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        username = new javax.swing.JLabel();
         roleJComboBox = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        userJTable = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        userroleJTable = new javax.swing.JTable();
+        passrole = new javax.swing.JLabel();
+        idpassforrole = new javax.swing.JLabel();
+        role = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        jLabel3.setText("Employee");
+        emprole.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
+        emprole.setText("Employee");
 
         employeeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -77,8 +77,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        jLabel5.setText("Organization");
+        organrole.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
+        organrole.setText("Organization");
 
         createUserJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
         createUserJButton.setText("Create");
@@ -95,12 +95,12 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        jLabel1.setText("User Name");
+        username.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
+        username.setText("User Name");
 
         roleJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        userJTable.setModel(new javax.swing.table.DefaultTableModel(
+        userroleJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -123,16 +123,16 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(userJTable);
+        jScrollPane1.setViewportView(userroleJTable);
 
-        jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        jLabel2.setText("Password");
+        passrole.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
+        passrole.setText("Password");
 
-        jLabel6.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel6.setText("Create Id and Password For Role");
+        idpassforrole.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
+        idpassforrole.setText("Create Id and Password For Role");
 
-        jLabel7.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
-        jLabel7.setText("Role");
+        role.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
+        role.setText("Role");
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/iconbelow.png"))); // NOI18N
 
@@ -147,7 +147,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel6)
+                                .addComponent(idpassforrole)
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
@@ -158,11 +158,11 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                                 .addGap(395, 395, 395))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel5))
+                                    .addComponent(username)
+                                    .addComponent(passrole)
+                                    .addComponent(emprole)
+                                    .addComponent(role)
+                                    .addComponent(organrole))
                                 .addGap(30, 30, 30)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
@@ -188,29 +188,29 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addComponent(jLabel6)
+                .addComponent(idpassforrole)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(organrole))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(employeeJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addComponent(emprole))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(roleJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
+                    .addComponent(role))
                 .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(username))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(passwordJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(passrole))
                 .addGap(17, 17, 17)
                 .addComponent(createUserJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -275,7 +275,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
     public void populateData() {
 
-        DefaultTableModel model = (DefaultTableModel) userJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) userroleJTable.getModel();
 
         model.setRowCount(0);
 
@@ -284,7 +284,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 Object row[] = new Object[2];
                 row[0] = ua;
                 row[1] = ua.getRole();
-                ((DefaultTableModel) userJTable.getModel()).addRow(row);
+                ((DefaultTableModel) userroleJTable.getModel()).addRow(row);
             }
         }
     }
@@ -309,18 +309,18 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton createUserJButton;
     private javax.swing.JComboBox employeeJComboBox;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel emprole;
+    private javax.swing.JLabel idpassforrole;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JComboBox organizationJComboBox;
+    private javax.swing.JLabel organrole;
+    private javax.swing.JLabel passrole;
     private javax.swing.JTextField passwordJTextField;
+    private javax.swing.JLabel role;
     private javax.swing.JComboBox roleJComboBox;
-    private javax.swing.JTable userJTable;
+    private javax.swing.JLabel username;
+    private javax.swing.JTable userroleJTable;
     // End of variables declaration//GEN-END:variables
 }

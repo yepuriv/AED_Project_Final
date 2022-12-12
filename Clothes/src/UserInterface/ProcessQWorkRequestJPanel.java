@@ -161,7 +161,7 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
         jLabel1.setText("Result");
 
         tblProducts.setModel(new javax.swing.table.DefaultTableModel(
@@ -224,13 +224,13 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel15.setFont(new java.awt.Font("Bodoni MT", 1, 12)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Academy Engraved LET", 1, 12)); // NOI18N
         jLabel15.setText("Are all products free from Tears and Wears");
 
-        jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Academy Engraved LET", 1, 12)); // NOI18N
         jLabel2.setText("Are the products within the expiry date? ");
 
-        jLabel11.setFont(new java.awt.Font("Bodoni MT", 1, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Academy Engraved LET", 1, 12)); // NOI18N
         jLabel11.setText("Are all products free from Pathogens?");
 
         radioQ4No.setText("NO");
@@ -247,7 +247,7 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel13.setFont(new java.awt.Font("Bodoni MT", 1, 12)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Academy Engraved LET", 1, 12)); // NOI18N
         jLabel13.setText("Are all products free from contaminants?");
 
         radioQ5Yes.setText("YES");
@@ -257,7 +257,7 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel17.setFont(new java.awt.Font("Bodoni MT", 1, 12)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Academy Engraved LET", 1, 12)); // NOI18N
         jLabel17.setText("Are all products free from Process Generated chemical?");
 
         radioQ5No.setText("NO");
@@ -274,7 +274,7 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel19.setFont(new java.awt.Font("Bodoni MT", 1, 12)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Academy Engraved LET", 1, 12)); // NOI18N
         jLabel19.setText("Are all products free from Spoilage Indicator?");
 
         radioQ6No.setText("NO");
@@ -284,7 +284,7 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel21.setFont(new java.awt.Font("Bodoni MT", 1, 12)); // NOI18N
+        jLabel21.setFont(new java.awt.Font("Academy Engraved LET", 1, 12)); // NOI18N
         jLabel21.setText("Are all the products available and ready to be distributed?");
 
         radioQ7Yes.setText("YES");
@@ -305,7 +305,7 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
         resultJTextField.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         resultJTextField.setForeground(new java.awt.Color(102, 204, 0));
 
-        jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
         jLabel3.setText("FINAL RESULT");
 
         finalProgressBar.setBackground(new java.awt.Color(102, 255, 102));
@@ -322,16 +322,16 @@ public class ProcessQWorkRequestJPanel extends javax.swing.JPanel {
 
         spoilageProgressBar.setStringPainted(true);
 
-        jLabel7.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
         jLabel7.setText("WEAR AND TEAR TEST  ");
 
-        jLabel8.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
         jLabel8.setText("CHEMICAL TEST  ");
 
-        jLabel9.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
         jLabel9.setText("SPOILAGE INDICATOR TEST");
 
-        jLabel10.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Academy Engraved LET", 1, 14)); // NOI18N
         jLabel10.setText("MICROBIOLOGICAL TEST ");
 
         resetBtn.setText("Reset");

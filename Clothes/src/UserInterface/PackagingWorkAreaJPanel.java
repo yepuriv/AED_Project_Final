@@ -101,7 +101,7 @@ public class PackagingWorkAreaJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setToolTipText("");
 
-        jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
         jLabel1.setText("Packaging Dashboard");
 
         refreshJButton.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -163,7 +163,7 @@ public class PackagingWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(tblProducts1);
 
-        jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Academy Engraved LET", 1, 18)); // NOI18N
         jLabel3.setText("Products");
 
         showProductBtn1.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
@@ -207,7 +207,7 @@ public class PackagingWorkAreaJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
                     .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 267, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 265, Short.MAX_VALUE)
                 .addComponent(btnSentToTransport, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

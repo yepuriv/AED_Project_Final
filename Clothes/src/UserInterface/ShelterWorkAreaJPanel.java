@@ -127,7 +127,7 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        enterpriseLabel.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        enterpriseLabel.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseLabel.setText("Enterprise :");
 
@@ -254,12 +254,12 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
 
     private void showProductBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showProductBtnActionPerformed
         // TODO add your handling code here:
-        
+
         int selectedRow = shelterWorkRequestTable.getSelectedRow();
-         if (selectedRow < 0){
+        if (selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select a request");
         }
-       
+
         DefaultTableModel model = (DefaultTableModel) tblProducts.getModel();
         model.setRowCount(0);model.setRowCount(0);
 
@@ -268,13 +268,13 @@ public class ShelterWorkAreaJPanel extends javax.swing.JPanel {
         ArrayList<Products> productList = ((ClothesRequirementRequest) request).getProductList();
         if (productList!=null){
             for (Products p : productList) {
-               Object row[] = new Object[3];
-               row[0] = p;
-               row[1] = p.getProductName();
-               row[2] = p.getQuantity();
-               ((DefaultTableModel) tblProducts.getModel()).addRow(row);  
+                Object row[] = new Object[3];
+                row[0] = p;
+                row[1] = p.getProductName();
+                row[2] = p.getQuantity();
+                ((DefaultTableModel) tblProducts.getModel()).addRow(row);
             }
-        }    
+        }
     }//GEN-LAST:event_showProductBtnActionPerformed
 
 
