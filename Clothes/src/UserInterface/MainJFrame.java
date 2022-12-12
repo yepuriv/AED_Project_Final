@@ -5,7 +5,7 @@
  */
 package UserInterface;
 
-import Database.DB4OUtil;
+import Database.ClothesDb;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
@@ -13,11 +13,7 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.util.Properties;
-import javax.mail.Message.RecipientType;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -32,7 +28,7 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     
     private EcoSystem system;
-    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    private ClothesDb dB4OUtil = ClothesDb.getInstance();
     
     public MainJFrame() {
         initComponents();
@@ -199,38 +195,7 @@ public class MainJFrame extends javax.swing.JFrame {
             layout.next(userProcessContainer);
         }
         
-        //***************************** Starting of Email Logic
-        Properties props = new Properties();
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", 465);
-        props.put("mail.smtp.user", "aed123.fms@gmail.com");
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.debug", "true");
-        props.put("mail.smtp.socketFactory.port", 465);
-        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-        props.put("mail.smtp.ssl.protocols", "TLSv1.2");
-        props.put("mail.smtp.socketFactory.fallback", "false"); 
-        try {
-             
-                Session session = Session.getDefaultInstance(props, null);
-                session.setDebug(true);
-                MimeMessage message = new MimeMessage(session);
-                message.setText("The person login is" + " " +userName);
-                message.setSubject("Login Person");
-                message.setFrom(new InternetAddress("aed123.fms@gmail.com"));
-                message.addRecipient(RecipientType.TO, new InternetAddress("aed123.fms@gmail.com"));
-                message.saveChanges();
-                Transport transport = session.getTransport("smtp");
-                transport.connect("smtp.gmail.com", "aed123.fms@gmail.com", "aed@fms123");
-                transport.sendMessage(message, message.getAllRecipients());
-                transport.close();
-        } catch (Exception e) {
-            e.printStackTrace();  
-        }  
-        //*************************************End of addition for sending mail
-
-
+       
         btnLogin.setEnabled(false);
         btnLogout.setEnabled(true);
         txtUsername.setEnabled(false);

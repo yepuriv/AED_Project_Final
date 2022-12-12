@@ -14,10 +14,7 @@ import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.util.Properties;
-import javax.mail.Message;
-import javax.mail.Session;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -279,40 +276,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         populateTable();
         JOptionPane.showMessageDialog(null, "Credentials have been created");
         
-        //**************************** Starting of addition of email **********************************
-
-        Properties props = new Properties();
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", 465);
-        props.put("mail.smtp.user", "aed123.fms@gmail.com");
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.debug", "true");
-        props.put("mail.smtp.socketFactory.port", 465);
-        props.put("mail.smtp.ssl.protocols", "TLSv1.2");
-        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-        props.put("mail.smtp.socketFactory.fallback", "false"); 
-        try {
-                       
-                Session session = Session.getDefaultInstance(props, null);
-                session.setDebug(true);
-                MimeMessage message = new MimeMessage(session);
-
-                message.setText("The Network is :"+" "+networkJComboBox.getSelectedItem()+"\n\n"+"The Enterprise is : "+" "+enterpriseJComboBox.getSelectedItem()+"\n\n"+"The UserName is :"+" "+usernameJTextField.getText()+"\n\n"+"The Password is : " + " " +password);
-                message.setSubject("New Login Credentials for Enterprise "+enterpriseJComboBox.getSelectedItem());
-                message.setFrom(new InternetAddress("aed123.fms@gmail.com"));
-                message.addRecipient(Message.RecipientType.TO, new InternetAddress("aed123.fms@gmail.com"));
-                message.saveChanges();
-                javax.mail.Transport transport = session.getTransport("smtp");
-                transport.connect("smtp.gmail.com", "aed123.fms@gmail.com", "aed@fms123");
-                transport.sendMessage(message, message.getAllRecipients());
-                transport.close();
-                
-        } catch (Exception e) {
-            e.printStackTrace();  
-            
-        }
-        
+       
     //**************************** Ending of additio of email *********************************
 
         usernameJTextField.setText("");
