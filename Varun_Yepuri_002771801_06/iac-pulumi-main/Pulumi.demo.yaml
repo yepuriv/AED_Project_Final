@@ -1,0 +1,8 @@
+encryptionsalt: v1:p10TvUb++mI=:v1:/TG3MEGx2WJjHGvv:LawJSIksUZIljLUBPohNvxWv0R3nCw==
+config:
+  aws:region: us-east-1
+  aws:config:profile: demo
+  my_vpc:cidrBlock: "10.0.0.0/16"
+  my_publicRouteTable:cidrBlock: "0.0.0.0/0"
+  numOfSubnets:number: 3
+  availabilityZones:zones: "a,b,c"
